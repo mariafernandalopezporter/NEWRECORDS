@@ -1,0 +1,122 @@
+{
+  "entities": {
+    "Aircraft": {
+      "title": "Aircraft",
+      "description": "Aircraft information and checklist status",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ac_owner": { "type": "string", "description": "A/C Owner - OBLIGATORIO" },
+        "ac_registration": { "type": "string", "description": "A/C Registration - OBLIGATORIO" },
+        "acr": { "type": "string", "description": "ACR" },
+        "ac_subtype": { "type": "string", "description": "A/C Subtype" },
+        "rotation_code": { "type": "string", "description": "Rotation Code (Previously ROL CODE)" },
+        "valid_from": { "type": "string", "format": "date" },
+        "valid_to": { "type": "string", "format": "date" },
+        "ac_type": { "type": "string", "description": "A/C Type - OBLIGATORIO" },
+        "rst": { "type": "string" },
+        "icao_subtype": { "type": "string" },
+        "base_airport": { "type": "string", "description": "Base Airport - OBLIGATORIO" },
+        "category": { "type": "string" },
+        "rff": { "type": "string" },
+        "manufacturer": { "type": "string" },
+        "man_serial": { "type": "string" },
+        "engine": { "type": "string" },
+        "engine_type": { "type": "string" },
+        "delivered": { "type": "string", "format": "date" },
+        "physical_j": { "type": "number" },
+        "physical_w": { "type": "number" },
+        "physical_y": { "type": "number" },
+        "remarks": { "type": "string" },
+        "checks": {
+          "type": "object",
+          "properties": {
+            "ifn": { "type": "object", "properties": { "checked": { "type": "boolean" }, "timestamp": { "type": "string" }, "user": { "type": "string" } } },
+            "limops": { "type": "object", "properties": { "checked": { "type": "boolean" }, "timestamp": { "type": "string" }, "user": { "type": "string" } } },
+            "jta": { "type": "object", "properties": { "checked": { "type": "boolean" }, "timestamp": { "type": "string" }, "user": { "type": "string" } } },
+            "aircom": { "type": "object", "properties": { "checked": { "type": "boolean" }, "timestamp": { "type": "string" }, "user": { "type": "string" } } },
+            "sicco": { "type": "object", "properties": { "checked": { "type": "boolean" }, "timestamp": { "type": "string" }, "user": { "type": "string" } } },
+            "ops_flt": { "type": "object", "properties": { "checked": { "type": "boolean" }, "timestamp": { "type": "string" }, "user": { "type": "string" } } },
+            "despacho": { "type": "object", "properties": { "checked": { "type": "boolean" }, "timestamp": { "type": "string" }, "user": { "type": "string" } } },
+            "mantenedor": { "type": "object", "properties": { "checked": { "type": "boolean" }, "timestamp": { "type": "string" }, "user": { "type": "string" } } },
+            "videowall": { "type": "object", "properties": { "checked": { "type": "boolean" }, "timestamp": { "type": "string" }, "user": { "type": "string" } } },
+            "crew": { "type": "object", "properties": { "checked": { "type": "boolean" }, "timestamp": { "type": "string" }, "user": { "type": "string" } } }
+          }
+        },
+        "status": { "type": "string", "enum": ["pending", "in_progress", "completed"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["ac_owner", "ac_registration", "ac_type", "base_airport", "acr", "ac_subtype", "rotation_code", "valid_from", "valid_to"]
+    },
+    "Notification": {
+      "title": "Notification",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "message": { "type": "string" },
+        "aircraft_id": { "type": "string" },
+        "aircraft_registration": { "type": "string" },
+        "type": { "type": "string", "enum": ["new_aircraft", "area_checked", "completed"] },
+        "read_by": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "message", "type", "createdAt"]
+    },
+    "BaseChange": {
+      "title": "BaseChange",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ac_owner": { "type": "string" },
+        "ac_registration": { "type": "string" },
+        "base_actual": { "type": "string" },
+        "new_base": { "type": "string" },
+        "fecha_desde": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["ac_owner", "ac_registration", "base_actual", "new_base", "fecha_desde"]
+    },
+    "OperatorChange": {
+      "title": "OperatorChange",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ac_owner_actual": { "type": "string" },
+        "ac_owner_new": { "type": "string" },
+        "ac_registration": { "type": "string" },
+        "base_actual": { "type": "string" },
+        "fecha_desde": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["ac_owner_actual", "ac_owner_new", "ac_registration", "base_actual", "fecha_desde"]
+    },
+    "AlertRequest": {
+      "title": "AlertRequest",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["IFN", "JTA"] },
+        "restrictionName": { "type": "string" },
+        "routeInfo": { "type": "string" },
+        "periodFrom": { "type": "string" },
+        "periodTo": { "type": "string" },
+        "replacesRestriction": { "type": "string" },
+        "remarks": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "completed"] },
+        "requesterEmail": { "type": "string" },
+        "completedBy": { "type": "string" },
+        "completedAt": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["type", "restrictionName", "routeInfo", "periodFrom", "periodTo", "status", "requesterEmail", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/aircrafts": { "schema": "Aircraft", "description": "Fleet aircrafts" },
+    "/notifications": { "schema": "Notification", "description": "System notifications" },
+    "/base_changes": { "schema": "BaseChange", "description": "History of base changes" },
+    "/operator_changes": { "schema": "OperatorChange", "description": "History of operator changes" },
+    "/alert_requests": { "schema": "AlertRequest", "description": "Fleet alert requirements" }
+  }
+}

@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+
+  --color-latam-navy: #001D4B;
+  --color-latam-magenta: #E6007E;
+  --color-latam-slate: #4B6B9C;
+  --color-latam-gray: #F1F5F9;
+}
+
+@layer base {
+  body {
+    @apply bg-latam-gray text-slate-800 font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-latam-navy;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-2 rounded font-bold transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none bg-latam-navy text-white shadow-sm hover:brightness-110 uppercase text-xs tracking-widest;
+  }
+
+  .btn-magenta {
+    @apply px-6 py-2 rounded font-bold transition-all duration-200 active:scale-95 disabled:opacity-50 disabled:pointer-events-none bg-latam-magenta text-white shadow-sm hover:brightness-110 uppercase text-xs tracking-widest;
+  }
+
+  .card-latam {
+    @apply bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden;
+  }
+
+  .input-latam {
+    @apply w-full px-4 py-2 bg-white border border-slate-200 rounded focus:ring-2 focus:ring-latam-navy focus:border-transparent outline-none transition-all placeholder:text-slate-400 text-sm uppercase font-bold text-latam-navy;
+  }
+
+  .glass-panel {
+    @apply bg-white/90 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+
+  .accent-line {
+    @apply h-1 bg-linear-to-r from-latam-magenta to-latam-navy;
+  }
+
+  .status-badge {
+    @apply text-[10px] px-2 py-0.5 rounded-full uppercase font-bold tracking-wider;
+  }
+}
+
