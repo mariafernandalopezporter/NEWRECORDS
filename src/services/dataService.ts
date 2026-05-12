@@ -14,9 +14,11 @@ import {
   serverTimestamp,
   deleteDoc
 } from 'firebase/firestore';
+import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged, User } from 'firebase/auth';
 
 // Fallback logic for Firebase configuration
 let db: any = null;
+let auth: any = null;
 
 const initializeFirebase = async () => {
   try {
@@ -26,6 +28,7 @@ const initializeFirebase = async () => {
     if (config && config.default) {
       const app = initializeApp(config.default);
       db = getFirestore(app);
+      auth = getAuth(app);
       return true;
     }
   } catch (e) {
@@ -34,7 +37,7 @@ const initializeFirebase = async () => {
   return false;
 };
 
-const SHEET_URL = 'https://docs.google.com/spreadsheets/d/1T_tURLeAGHDQ1ovKLO6SD3cI3xIPWMF9/export?format=csv&gid=329232321';
+const SHEET_URL = 'https://docs.google.com/spreadsheets/d/15V3Q2rH5qAeHVQOIzWUtDaJvGmnFTrI4Uz6g3faobNY/export?format=csv&gid=1331518384';
 
 class DataService {
   private aircrafts: Aircraft[] = [];
@@ -43,14 +46,50 @@ class DataService {
   private baseChanges: BaseChange[] = [];
   private operatorChanges: OperatorChange[] = [];
   private alertRequests: AlertRequest[] = [];
+  private referenceAircrafts: Aircraft[] = [];
+  private isFirebaseInitializing = true;
   private isFirebaseReady = false;
 
   constructor() {
     this.initLocalFallback();
-    initializeFirebase().then(ready => {
-      this.isFirebaseReady = ready;
-      if (ready) this.syncWithFirebase();
-    });
+    this.startPolling();
+    initializeFirebase()
+      .then(ready => {
+        this.isFirebaseReady = ready;
+        if (ready) this.syncWithFirebase();
+      })
+      .finally(() => {
+        this.isFirebaseInitializing = false;
+        // Trigger initial auth check with the final state
+        if (!auth) this.triggerAuthChange(null);
+      });
+  }
+
+  private pollingInterval: any;
+  private startPolling() {
+    // Initial fetch
+    this.fetchSharedData();
+    // Poll every 10 seconds for updates from other users
+    this.pollingInterval = setInterval(() => this.fetchSharedData(), 10000);
+  }
+
+  private async fetchSharedData() {
+    try {
+      const response = await fetch('/api/data');
+      if (response.ok) {
+        const data = await response.json();
+        this.aircrafts = data.aircrafts || [];
+        this.notifications = data.notifications || [];
+        this.alertRequests = data.alertRequests || [];
+        this.baseChanges = data.baseChanges || [];
+        this.operatorChanges = data.operatorChanges || [];
+        this.referenceAircrafts = data.referenceData || [];
+        this.saveLocal();
+        // Trigger generic "data changed" if we had callbacks, but for now App.tsx re-renders on its own interval or after actions
+      }
+    } catch (e) {
+      console.warn("Shared API not available yet, using local state");
+    }
   }
 
   private initLocalFallback() {
@@ -137,32 +176,85 @@ class DataService {
                 return {
                   id: `ext-${index}`,
                   activation_type: 'new_registry',
-                  ac_owner: owner,
-                  ac_registration: reg,
+                  
+                  // Basic Info (A-I)
+                  ac_owner: getVal(['A/C OWNER', 'OWNER', 'OPERATOR']) || 'N/A',
+                  ac_registration: getVal(['A/C REGISTRATION', 'REGISTRATION', 'MATRICULA']) || `EXT-${index}`,
                   acr: getVal(['ACR']) || '',
-                  ac_subtype: getVal(['SUBTYPE', 'A/C SUBTYPE', 'SUBTIPO']) || '',
-                  rotation_code: getVal(['ROTATION CODE', 'ROTATION', 'ROTACION']) || '',
-                  valid_from: '',
-                  valid_to: '',
-                  ac_type: type,
+                  ac_subtype: getVal(['A/C SUBTYPE', 'SUBTYPE']) || '',
+                  rotation_code: getVal(['ROT CODE', 'ROTATION CODE']) || '',
+                  valid_from: getVal(['VALID_FROM', 'VALID FROM']) || '',
+                  valid_to: getVal(['VALID_TO', 'VALID TO']) || '',
+                  ac_type: getVal(['A/C TYPE', 'TYPE']) || '',
+                  
+                  // Technical Details (J-O)
                   rst: getVal(['RST']) || '',
+                  local_type: getVal(['LOCAL TYPE']) || '',
+                  local_subtype: getVal(['LOCAL SUBTYPE']) || '',
                   icao_subtype: getVal(['ICAO SUBTYPE', 'ICAO']) || '',
-                  base_airport: getVal(['BASE', 'BASE AIRPORT', 'STATION', 'AEROPUERTO']) || 'UIO',
-                  category: getVal(['CATEGORY', 'CATEGORIA']) || '',
+                  base_airport: getVal(['BASE AIRPORT', 'BASE', 'STATION']) || 'UIO',
+                  category: getVal(['CATEGORY']) || '',
+
+                  // Identity & Status (P-Y)
+                  name: getVal(['NAME', 'NOMBRE']) || '',
+                  active: getVal(['ACTIVE', 'ACTIVO']) || '',
+                  etops: getVal(['ETOPS']) || '',
+                  flight_range: getVal(['FLIGHT RANGE', 'RANGE']) || '',
                   rff: getVal(['RFF']) || '',
-                  manufacturer: getVal(['MANUFACTURER', 'FABRICANTE']) || '',
-                  man_serial: getVal(['SERIAL', 'MSN', 'MSN/SERIAL', 'SERIE']) || '',
-                  engine: getVal(['ENGINE', 'MOTOR']) || '',
-                  engine_type: getVal(['ENGINE TYPE', 'TIPO MOTOR']) || '',
-                  delivered: getVal(['DELIVERED', 'FECHA ENTREGA', 'ENTREGA']) || '',
-                  physical_j: 0, 
-                  physical_w: 0,
-                  physical_y: 0,
-                  remarks: getVal(['REMARKS', 'OBSERVACIONES', 'OBSERVACION', 'COMENTARIOS', 'DESCRIPCION']) || colJValue || '',
+                  manufacturer: getVal(['MANUFACTURER']) || '',
+                  man_serial: getVal(['MAN: SL#', 'SERIAL', 'MSN']) || '',
+                  engine: getVal(['ENGINE']) || '',
+                  engine_type: getVal(['ENGINE TYPE']) || '',
+                  delivered: getVal(['DELIVERED']) || '',
+
+                  // Performance & weights (Z-AH)
+                  selcal: getVal(['SELCAL']) || '',
+                  perf_index: getVal(['AIRCRAFT PERFORMANCE INDEX', 'PERFORMANCE INDEX']) || '',
+                  max_dow: getVal(['MAX DRY OPERATING WEIGHT', 'DOW']) || '',
+                  max_zfw: getVal(['MAX ZERO FUEL WEIGHT', 'ZFW']) || '',
+                  max_rw: getVal(['MAX RAMP WEIGHT', 'RW']) || '',
+                  max_tow: getVal(['MAX TAKEOFF WEIGHT', 'TOW']) || '',
+                  max_lw: getVal(['MAX LANDING WEIGHT', 'LW']) || '',
+                  hold_cap_vol: getVal(['HOLD CAPACITY(VOL)', 'HOLD VOL']) || '',
+                  hold_cap_wgt: getVal(['HOLD CAPACITY(WGT)', 'HOLD WGT']) || '',
+
+                  // Configuration (AI-AO)
+                  physical_j: parseInt(getVal(['SEAT_CLASS_J', 'PHYSICAL_J']) || '0'), 
+                  physical_w: parseInt(getVal(['SEAT_CLASS_W', 'PHYSICAL_W']) || '0'),
+                  physical_y: parseInt(getVal(['SEAT_CLASS_Y', 'PHYSICAL_Y']) || '0'),
+                  tail_wind: getVal(['TAIL WIND']) || '',
+                  cross_wind: getVal(['CROSS WIND']) || '',
+                  cabin_jump_seat: getVal(['CABIN JUMP SEAT']) || '',
+                  cockpit_jump_seat: getVal(['COCKPIT JUMP SEAT']) || '',
+
+                  // Operational (AQ-BB)
+                  rem_fuel: getVal(['REMAINING FUEL']) || '',
+                  fuel_supplied: getVal(['FUEL SUPPLIED']) || '',
+                  fob_dep: getVal(['FOB(DEP)', 'FOB DEP']) || '',
+                  est_fob: getVal(['ESTIMATED FOB']) || '',
+                  est_fob_date: getVal(['ESTIMATED FOB DATE']) || '',
+                  terminal: getVal(['TERMINAL']) || '',
+                  stand: getVal(['STAND']) || '',
+                  hangar: getVal(['HANGAR']) || '',
+                  gate: getVal(['GATE']) || '',
+                  towing_start_position: getVal(['TOWING_START_POSITION']) || '',
+                  towing_end_position: getVal(['TOWING_END_POSITION']) || '',
+                  towing_date_time: getVal(['TOWING_DATE_TIME']) || '',
+
+                  // Tracking (BC-BI)
+                  next_info_id: getVal(['NEXT INFORMATION ID']) || '',
+                  next_info_time: getVal(['NEXT INFORMATION TIME']) || '',
+                  last_flight_id: getVal(['LAST FLIGHT ID']) || '',
+                  last_flight_time: getVal(['LAST FLIGHT TIME']) || '',
+                  raw_status: getVal(['STATUS']) || 'PENDING',
+                  updated_time: getVal(['UPDATED TIME']) || '',
+                  updated_by: getVal(['UPDATED BY']) || '',
+
+                  remarks: getVal(['REMARKS', 'OBSERVACIONES']) || colJValue || '',
                   status: 'pending',
                   createdAt: new Date().toISOString(),
                   checks: { 
-                    ifn: {checked: false}, limops: {checked: false}, jta: {checked: false}, aircom: {checked: false}, sicco: {checked: false}, ops_flt: {checked: false}, despacho: {checked: false}, mantenedor: {checked: false}, videowall: {checked: false}, crew: {checked: false} 
+                    ifn: {checked: false}, limops: {checked: false}, jta: {checked: false}, aircom: {checked: false}, sicco: {checked: false}, ops_flt: {checked: false}, despacho: {checked: false}, mantenedor: {checked: false}, videowall: {checked: false}, crew: {checked: false}, diccionario: {checked: false}, jira_ticket: {checked: false}
                   }
                 } as Aircraft;
               });
@@ -178,8 +270,96 @@ class DataService {
   }
 
   async getAircrafts() { return [...this.aircrafts]; }
-  async getExternalAircrafts() { return [...this.externalAircrafts]; }
+  async getExternalAircrafts() { 
+    return [...this.referenceAircrafts, ...this.externalAircrafts]; 
+  }
   async getAlertRequests() { return [...this.alertRequests]; }
+
+  async signIn() {
+    if (!auth) {
+      // Fallback for development/local mode if Firebase is not ready
+      console.log("Using local fallback login");
+      const mockUser = {
+        email: "mariafernanda.lopez@latam.com",
+        displayName: "Maria Fernanda Lopez",
+        uid: "local-user"
+      } as any;
+      
+      // We need to trigger the auth change manually since there's no Firebase listener
+      this.triggerAuthChange(mockUser);
+      return mockUser;
+    }
+    const provider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, provider);
+      return result.user;
+    } catch (error) {
+      console.error("Error signing in", error);
+      throw error;
+    }
+  }
+
+  private authCallbacks: ((user: User | null) => void)[] = [];
+  private triggerAuthChange(user: User | null) {
+    this.authCallbacks.forEach(cb => cb(user));
+  }
+
+  async logout() {
+    if (!auth) {
+      this.triggerAuthChange(null);
+      return;
+    }
+    await signOut(auth);
+  }
+
+  onAuthChange(callback: (user: User | null) => void) {
+    this.authCallbacks.push(callback);
+    
+    let timeoutId: any;
+    
+    // Safety timeout: if auth is not ready in 5 seconds, assume local mode
+    timeoutId = setTimeout(() => {
+      if (this.isFirebaseInitializing) {
+        console.log("Firebase initialization taking too long, providing initial state");
+        callback(null);
+      }
+    }, 5000);
+
+    if (this.isFirebaseInitializing && !auth) {
+      const checkAuth = setInterval(() => {
+        if (!this.isFirebaseInitializing || auth) {
+          clearInterval(checkAuth);
+          clearTimeout(timeoutId);
+          if (auth) {
+            onAuthStateChanged(auth, (user) => {
+              this.triggerAuthChange(user);
+              // Result is handled by triggerAuthChange which calls all callbacks
+            });
+          } else {
+            callback(null);
+          }
+        }
+      }, 500);
+      return () => {
+        clearInterval(checkAuth);
+        clearTimeout(timeoutId);
+        this.authCallbacks = this.authCallbacks.filter(cb => cb !== callback);
+      };
+    }
+    
+    clearTimeout(timeoutId);
+    if (auth) {
+      onAuthStateChanged(auth, (user) => {
+        this.triggerAuthChange(user);
+      });
+    } else {
+      callback(null);
+    }
+
+    return () => {
+      this.authCallbacks = this.authCallbacks.filter(cb => cb !== callback);
+    };
+  }
   
   async createActivation(
     type: ActivationType, 
@@ -232,11 +412,25 @@ class DataService {
       });
       finalAircraft = { ...activationData, id: docRef.id } as Aircraft;
     } else {
-      finalAircraft = {
-        ...activationData,
-        id: Math.random().toString(36).substr(2, 9),
-      } as Aircraft;
-      this.aircrafts.unshift(finalAircraft);
+      try {
+        const response = await fetch('/api/aircrafts', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(activationData)
+        });
+        if (response.ok) {
+          finalAircraft = await response.json();
+          this.aircrafts.unshift(finalAircraft);
+        } else {
+          throw new Error("API failed");
+        }
+      } catch (e) {
+        finalAircraft = {
+          ...activationData,
+          id: Math.random().toString(36).substr(2, 9),
+        } as Aircraft;
+        this.aircrafts.unshift(finalAircraft);
+      }
       this.saveLocal();
     }
 
@@ -259,7 +453,7 @@ class DataService {
         base: finalAircraft.base_airport,
         from: (data as any).base_actual || (data as any).ac_owner_actual,
         to: (data as any).new_base || (data as any).ac_owner_new,
-        recipients: this.getRecipients(type)
+        recipients: this.getRecipients(type, userEmail)
       }
     );
 
@@ -306,13 +500,25 @@ class DataService {
         status: newStatus
       });
     } else {
+      try {
+        await fetch(`/api/aircrafts/${aircraftId}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ checks: updatedChecks, status: newStatus })
+        });
+      } catch (e) {
+        console.error("API update failed, local only");
+      }
       aircraft.checks = updatedChecks;
       aircraft.status = newStatus;
       this.saveLocal();
     }
 
     // SYNC TO GOOGLE SHEET
-    this.syncToSpreadsheet(aircraft.ac_registration, area.toUpperCase(), userEmail, timestamp, 'CHECK_UPDATE');
+    this.syncToSpreadsheet(aircraft.ac_registration, area.toUpperCase(), userEmail, timestamp, 'CHECK_UPDATE', {
+      recipients: [userEmail, ...(AREA_PERMISSIONS[area] || [])],
+      message: `${userEmail} ha realizado el check de ${area.toUpperCase()} para ${aircraft.ac_registration}`
+    });
 
     // Email alert for 50% checklist
     const totalExpected = expectedKeys.length;
@@ -349,6 +555,15 @@ class DataService {
     if (db) {
       await updateDoc(doc(db, 'aircrafts', id), normalizedData);
     } else {
+      try {
+        await fetch(`/api/aircrafts/${id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(normalizedData)
+        });
+      } catch (e) {
+        console.error("API update failed");
+      }
       Object.assign(aircraft, normalizedData);
       this.saveLocal();
     }
@@ -380,22 +595,34 @@ class DataService {
         console.error(`Error deleting aircraft ${id}:`, error);
       }
     } else {
+      try {
+        await fetch(`/api/aircrafts/${id}`, { method: 'DELETE' });
+      } catch (e) {
+        console.error("API delete failed");
+      }
       this.aircrafts.splice(aircraftIndex, 1);
       this.saveLocal();
     }
   }
 
-  private getRecipients(type: ActivationType): string[] {
-    if (type === 'new_registry') return ALL_USERS;
-    
-    // For base_change and operator_change: diccionario, jta, ifn
-    const groups: (keyof AircraftChecks)[] = ['diccionario', 'jta', 'ifn'];
+  private getRecipients(type: ActivationType, creatorEmail: string): string[] {
     const recipients = new Set<string>();
-    groups.forEach(g => {
-      if (AREA_PERMISSIONS[g]) {
-        AREA_PERMISSIONS[g].forEach(email => recipients.add(email));
-      }
-    });
+    recipients.add(creatorEmail);
+    
+    if (type === 'new_registry') {
+      // For new registry, notify all relevant areas
+      Object.values(AREA_PERMISSIONS).forEach(list => {
+        list.forEach(email => recipients.add(email));
+      });
+    } else {
+      // For base_change and operator_change: diccionario, jta, ifn
+      const groups: (keyof AircraftChecks)[] = ['diccionario', 'jta', 'ifn'];
+      groups.forEach(g => {
+        if (AREA_PERMISSIONS[g]) {
+          AREA_PERMISSIONS[g].forEach(email => recipients.add(email));
+        }
+      });
+    }
     return Array.from(recipients);
   }
 
@@ -424,13 +651,27 @@ class DataService {
         createdAt: serverTimestamp()
       });
     } else {
-      const newNotif: Notification = {
-        ...notif,
-        id: Math.random().toString(36).substr(2, 9),
-        createdAt: new Date().toISOString(),
-        read_by: []
-      };
-      this.notifications.unshift(newNotif);
+      try {
+        const response = await fetch('/api/notifications', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(notif)
+        });
+        if (response.ok) {
+          const newNotif = await response.json();
+          this.notifications.unshift(newNotif);
+        } else {
+          throw new Error("API failed");
+        }
+      } catch (e) {
+        const newNotif: Notification = {
+          ...notif,
+          id: Math.random().toString(36).substr(2, 9),
+          createdAt: new Date().toISOString(),
+          read_by: []
+        };
+        this.notifications.unshift(newNotif);
+      }
       this.saveLocal();
     }
   }
@@ -445,6 +686,15 @@ class DataService {
           read_by: [...n.read_by, userEmail]
         });
       } else {
+        try {
+          await fetch(`/api/notifications/${id}/read`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userEmail })
+          });
+        } catch (e) {
+          console.error("API failed");
+        }
         n.read_by.push(userEmail);
         this.saveLocal();
       }
@@ -488,8 +738,22 @@ class DataService {
         createdAt: serverTimestamp()
       });
     } else {
-      const newRequest = { ...data, id: Math.random().toString(36).substr(2, 9) } as AlertRequest;
-      this.alertRequests.unshift(newRequest);
+      try {
+        const response = await fetch('/api/alert-requests', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (response.ok) {
+          const newRequest = await response.json();
+          this.alertRequests.unshift(newRequest);
+        } else {
+          throw new Error("API failed");
+        }
+      } catch (e) {
+        const newRequest = { ...data, id: Math.random().toString(36).substr(2, 9) } as AlertRequest;
+        this.alertRequests.unshift(newRequest);
+      }
       this.saveLocal();
     }
 
@@ -526,6 +790,15 @@ class DataService {
         completedAt
       });
     } else {
+      try {
+        await fetch(`/api/alert-requests/${id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ status: 'completed', completedBy, completedAt })
+        });
+      } catch (e) {
+        console.error("API failed");
+      }
       req.status = 'completed';
       req.completedBy = completedBy;
       req.completedAt = completedAt;
@@ -542,21 +815,42 @@ class DataService {
       {
         requester: req.requesterEmail,
         route: req.routeInfo,
+        emailBody: `El requerimiento (${req.restrictionName}) se ha cargado en ${req.type}`,
         message: `Solicitud de alerta ${req.type} completada por ${completedBy}`
       }
     );
   }
 
-  async cancelAlertRequest(id: string, cancelledBy: string) {
+  async cancelAlertRequest(id: string, cancelledBy: string, reason: string) {
     const req = this.alertRequests.find(r => r.id === id);
     if (!req) return;
 
     if (db) {
       await updateDoc(doc(db, 'alert_requests', id), {
         status: 'cancelled',
+        cancellationReason: reason,
+        completedBy: cancelledBy,
+        completedAt: new Date().toISOString()
       });
     } else {
+      try {
+        await fetch(`/api/alert-requests/${id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            status: 'cancelled', 
+            cancellationReason: reason, 
+            completedBy: cancelledBy, 
+            completedAt: new Date().toISOString() 
+          })
+        });
+      } catch (e) {
+        console.error("API failed");
+      }
       req.status = 'cancelled';
+      req.cancellationReason = reason;
+      req.completedBy = cancelledBy;
+      req.completedAt = new Date().toISOString();
       this.saveLocal();
     }
 
@@ -570,7 +864,9 @@ class DataService {
       {
         requester: req.requesterEmail,
         route: req.routeInfo,
-        message: `Solicitud de alerta ${req.type} ANULADA por ${cancelledBy}`
+        reason: reason,
+        emailBody: `Este requerimiento (${req.restrictionName}) se ha cancelado. Justificación: ${reason}`,
+        message: `Solicitud de alerta ${req.type} ANULADA por ${cancelledBy}. Motivo: ${reason}`
       }
     );
   }

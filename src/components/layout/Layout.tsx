@@ -33,9 +33,10 @@ interface LayoutProps {
   setActiveTab: (tab: string) => void;
   userEmail: string;
   notificationsCount: number;
+  logout: () => void;
 }
 
-export const Layout = ({ children, activeTab, setActiveTab, userEmail, notificationsCount }: LayoutProps) => {
+export const Layout = ({ children, activeTab, setActiveTab, userEmail, notificationsCount, logout }: LayoutProps) => {
   const [collapsed, setCollapsed] = React.useState(false);
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -97,15 +98,18 @@ export const Layout = ({ children, activeTab, setActiveTab, userEmail, notificat
             {!collapsed && (
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 rounded bg-latam-slate flex items-center justify-center text-[10px] font-bold text-white uppercase">
-                  {userEmail.substring(0, 2)}
+                  {userEmail ? userEmail.substring(0, 2) : '??'}
                 </div>
                 <div className="flex flex-col min-w-0">
-                  <span className="text-[10px] font-bold text-white truncate">{userEmail.split('@')[0]}</span>
-                  <span className="text-[8px] text-white/40 uppercase tracking-wider">Administrator</span>
+                  <span className="text-[10px] font-bold text-white truncate">{userEmail ? userEmail.split('@')[0] : 'Unknown'}</span>
+                  <span className="text-[8px] text-white/40 uppercase tracking-wider">User</span>
                 </div>
               </div>
             )}
-            {!collapsed && <p className="text-[8px] text-white/20 mt-1 uppercase tracking-tighter">v2.4.0 Build 2026</p>}
+            {!collapsed && <button onClick={logout} className="flex items-center gap-2 text-[8px] text-white/40 mt-1 uppercase tracking-widest hover:text-latam-magenta transition-colors">
+              <LogOut size={10} />
+              Cerrar Sesión
+            </button>}
           </div>
           <button
             onClick={() => setCollapsed(!collapsed)}
@@ -151,8 +155,12 @@ export const Layout = ({ children, activeTab, setActiveTab, userEmail, notificat
               )}
             </button>
             <div className="h-6 w-px bg-gray-200 mx-2" />
-            <span className="hidden sm:block text-sm font-medium text-gray-600">{userEmail}</span>
-            <button className="p-2 text-gray-400 hover:text-latam-magenta transition-colors">
+            <span className="hidden sm:block text-[10px] font-black uppercase tracking-widest text-slate-400">{userEmail}</span>
+            <button 
+              onClick={logout}
+              className="p-2 text-gray-400 hover:text-latam-magenta transition-colors"
+              title="Cerrar Sesión"
+            >
               <LogOut size={20} />
             </button>
           </div>
