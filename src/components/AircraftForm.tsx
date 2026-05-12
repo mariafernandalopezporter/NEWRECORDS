@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Aircraft } from '../types';
 
 const aircraftSchema = z.object({
+  // Basic Info
   ac_owner: z.string().min(1, "A/C Owner es requerido"),
   ac_registration: z.string().min(1, "A/C Registration es requerido"),
   acr: z.string().min(1, "ACR es requerido"),
@@ -15,19 +16,70 @@ const aircraftSchema = z.object({
   valid_from: z.string().min(1, "Valid From es requerida"),
   valid_to: z.string().min(1, "Valid To es requerida"),
   ac_type: z.string().min(1, "A/C Type es requerido"),
+  
+  // New Fields
   rst: z.string().optional(),
+  name: z.string().optional(),
+  active: z.string().optional(),
+  local_type: z.string().optional(),
+  local_subtype: z.string().optional(),
   icao_subtype: z.string().optional(),
   base_airport: z.string().min(1, "Base Airport es requerido"),
   category: z.string().optional(),
+  
+  // Specs
+  etops: z.string().optional(),
+  flight_range: z.string().optional(),
   rff: z.string().optional(),
   manufacturer: z.string().optional(),
   man_serial: z.string().optional(),
   engine: z.string().optional(),
   engine_type: z.string().optional(),
   delivered: z.string().optional(),
+  selcal: z.string().optional(),
+  perf_index: z.string().optional(),
+
+  // Weights
+  max_dow: z.string().optional(),
+  max_zfw: z.string().optional(),
+  max_rw: z.string().optional(),
+  max_tow: z.string().optional(),
+  max_lw: z.string().optional(),
+  hold_cap_vol: z.string().optional(),
+  hold_cap_wgt: z.string().optional(),
+
+  // Seats & Config
   physical_j: z.number().optional().or(z.literal('')),
   physical_w: z.number().optional().or(z.literal('')),
   physical_y: z.number().optional().or(z.literal('')),
+  tail_wind: z.string().optional(),
+  cross_wind: z.string().optional(),
+  cabin_jump_seat: z.string().optional(),
+  cockpit_jump_seat: z.string().optional(),
+
+  // Operational
+  rem_fuel: z.string().optional(),
+  fuel_supplied: z.string().optional(),
+  fob_dep: z.string().optional(),
+  est_fob: z.string().optional(),
+  est_fob_date: z.string().optional(),
+  terminal: z.string().optional(),
+  stand: z.string().optional(),
+  hangar: z.string().optional(),
+  gate: z.string().optional(),
+  towing_start_position: z.string().optional(),
+  towing_end_position: z.string().optional(),
+  towing_date_time: z.string().optional(),
+
+  // Tracking
+  next_info_id: z.string().optional(),
+  next_info_time: z.string().optional(),
+  last_flight_id: z.string().optional(),
+  last_flight_time: z.string().optional(),
+  raw_status: z.string().optional(),
+  updated_time: z.string().optional(),
+  updated_by: z.string().optional(),
+
   remarks: z.string().optional(),
 });
 
@@ -151,8 +203,13 @@ export const AircraftForm = ({ onSubmit, onCancel, existingAircrafts, externalAi
                       <span className="text-[9px] opacity-40 truncate block max-w-[180px] mt-1 uppercase font-bold">{ac.ac_owner}</span>
                     </div>
                     <div className="text-right">
-                      <span className={`text-[7px] font-black px-1.5 py-0.5 rounded uppercase block mb-1 ${ac.id.startsWith('ext') ? 'bg-latam-slate text-white' : 'bg-white/20 text-white'}`}>
-                        {ac.id.startsWith('ext') ? 'MASTER_SHEET' : 'LOCAL_DB'}
+                      <span className={`text-[7px] font-black px-1.5 py-0.5 rounded uppercase block mb-1 ${
+                        ac.id.startsWith('ext') ? 'bg-latam-slate text-white' : 
+                        ac.id.startsWith('shared') ? 'bg-latam-navy text-white border border-white/20' :
+                        'bg-white/20 text-white'
+                      }`}>
+                        {ac.id.startsWith('ext') ? 'MASTER_SHEET' : 
+                         ac.id.startsWith('shared') ? 'MASTER_DATA' : 'LOCAL_DB'}
                       </span>
                     </div>
                   </button>
@@ -200,18 +257,18 @@ export const AircraftForm = ({ onSubmit, onCancel, existingAircrafts, externalAi
         </div>
       </section>
 
-      {/* Aircraft Information */}
+      {/* Aircraft Technical Info */}
       <section className="space-y-4">
         <div className="flex items-center gap-2 text-latam-navy">
           <Settings size={16} strokeWidth={3} />
-          <h3 className="text-[11px] font-black uppercase tracking-widest">Aircraft Information</h3>
+          <h3 className="text-[11px] font-black uppercase tracking-widest">Technical details</h3>
         </div>
-        <div className="card-latam p-6 grid grid-cols-1 md:grid-cols-3 gap-6 border border-slate-200">
+        <div className="card-latam p-6 grid grid-cols-1 md:grid-cols-4 gap-6 border border-slate-200">
           <FormGroup label="A/C Type" required error={errors.ac_type?.message}>
             <input {...register('ac_type')} className="input-latam" />
           </FormGroup>
-          <FormGroup label="A/C Subtype">
-            <input {...register('ac_subtype')} className="input-latam opacity-50" readOnly />
+          <FormGroup label="A/C Subtype" required error={errors.ac_subtype?.message}>
+            <input {...register('ac_subtype')} className="input-latam" />
           </FormGroup>
           <FormGroup label="RST">
             <input {...register('rst')} className="input-latam" />
@@ -219,25 +276,34 @@ export const AircraftForm = ({ onSubmit, onCancel, existingAircrafts, externalAi
           <FormGroup label="ICAO Subtype">
             <input {...register('icao_subtype')} className="input-latam" />
           </FormGroup>
+          <FormGroup label="Local Type">
+            <input {...register('local_type')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Local Subtype">
+            <input {...register('local_subtype')} className="input-latam" />
+          </FormGroup>
           <FormGroup label="Base Airport" required error={errors.base_airport?.message}>
             <input {...register('base_airport')} className="input-latam" />
           </FormGroup>
           <FormGroup label="Category">
             <input {...register('category')} className="input-latam" />
           </FormGroup>
+          <FormGroup label="Name">
+            <input {...register('name')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Active Status">
+            <input {...register('active')} className="input-latam" />
+          </FormGroup>
         </div>
       </section>
 
-      {/* Aircraft Specifications */}
+      {/* Engineering Specs */}
       <section className="space-y-4">
         <div className="flex items-center gap-2 text-latam-navy">
           <ShieldCheck size={16} strokeWidth={3} />
-          <h3 className="text-[11px] font-black uppercase tracking-widest">Aircraft Specifications</h3>
+          <h3 className="text-[11px] font-black uppercase tracking-widest">Engineering Specs</h3>
         </div>
-        <div className="card-latam p-6 grid grid-cols-1 md:grid-cols-3 gap-6 border border-slate-200">
-          <FormGroup label="RFF">
-            <input {...register('rff')} className="input-latam" />
-          </FormGroup>
+        <div className="card-latam p-6 grid grid-cols-1 md:grid-cols-4 gap-6 border border-slate-200">
           <FormGroup label="Manufacturer">
             <input {...register('manufacturer')} className="input-latam" />
           </FormGroup>
@@ -253,24 +319,161 @@ export const AircraftForm = ({ onSubmit, onCancel, existingAircrafts, externalAi
           <FormGroup label="Delivered">
             <input {...register('delivered')} className="input-latam" />
           </FormGroup>
+          <FormGroup label="ETOPS">
+            <input {...register('etops')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Flight Range">
+            <input {...register('flight_range')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="RFF">
+            <input {...register('rff')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="SELCAL">
+            <input {...register('selcal')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Perf. Index">
+            <input {...register('perf_index')} className="input-latam" />
+          </FormGroup>
         </div>
       </section>
 
-      {/* Physical Seat */}
+      {/* Weights & Capacities */}
+      <section className="space-y-4">
+        <div className="flex items-center gap-2 text-latam-navy">
+          <Save size={16} strokeWidth={3} />
+          <h3 className="text-[11px] font-black uppercase tracking-widest">Weights & Capacities</h3>
+        </div>
+        <div className="card-latam p-6 grid grid-cols-1 md:grid-cols-4 gap-6 border border-slate-200 bg-slate-50/20">
+          <FormGroup label="Max DOW">
+            <input {...register('max_dow')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Max ZFW">
+            <input {...register('max_zfw')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Max RW">
+            <input {...register('max_rw')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Max TOW">
+            <input {...register('max_tow')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Max LW">
+            <input {...register('max_lw')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Hold Capacity (Vol)">
+            <input {...register('hold_cap_vol')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Hold Capacity (Wgt)">
+            <input {...register('hold_cap_wgt')} className="input-latam" />
+          </FormGroup>
+        </div>
+      </section>
+
+      {/* Configuration & Environment */}
       <section className="space-y-4">
         <div className="flex items-center gap-2 text-latam-navy">
           <User size={16} strokeWidth={3} />
-          <h3 className="text-[11px] font-black uppercase tracking-widest">Physical Seat</h3>
+          <h3 className="text-[11px] font-black uppercase tracking-widest">Configuration & Limits</h3>
         </div>
-        <div className="card-latam p-6 grid grid-cols-3 gap-6 border border-slate-200 bg-slate-50/30">
-          <FormGroup label="J">
-            <input type="number" {...register('physical_j', { valueAsNumber: true })} className="input-latam" />
+        <div className="card-latam p-6 grid grid-cols-1 md:grid-cols-4 gap-6 border border-slate-200">
+          <div className="col-span-1 md:col-span-4 grid grid-cols-3 gap-4 pb-4 border-b border-slate-100">
+            <FormGroup label="Seats J">
+              <input type="number" {...register('physical_j', { valueAsNumber: true })} className="input-latam" />
+            </FormGroup>
+            <FormGroup label="Seats W">
+              <input type="number" {...register('physical_w', { valueAsNumber: true })} className="input-latam" />
+            </FormGroup>
+            <FormGroup label="Seats Y">
+              <input type="number" {...register('physical_y', { valueAsNumber: true })} className="input-latam" />
+            </FormGroup>
+          </div>
+          <FormGroup label="Tail Wind Limit">
+            <input {...register('tail_wind')} className="input-latam" />
           </FormGroup>
-          <FormGroup label="W">
-            <input type="number" {...register('physical_w', { valueAsNumber: true })} className="input-latam" />
+          <FormGroup label="Cross Wind Limit">
+            <input {...register('cross_wind')} className="input-latam" />
           </FormGroup>
-          <FormGroup label="Y">
-            <input type="number" {...register('physical_y', { valueAsNumber: true })} className="input-latam" />
+          <FormGroup label="Cabin Jump Seat">
+            <input {...register('cabin_jump_seat')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Cockpit Jump Seat">
+            <input {...register('cockpit_jump_seat')} className="input-latam" />
+          </FormGroup>
+        </div>
+      </section>
+
+      {/* Operational Tracking */}
+      <section className="space-y-4">
+        <div className="flex items-center gap-2 text-latam-navy">
+          <Search size={16} strokeWidth={3} />
+          <h3 className="text-[11px] font-black uppercase tracking-widest">Operational Tracking</h3>
+        </div>
+        <div className="card-latam p-6 grid grid-cols-1 md:grid-cols-4 gap-6 border border-slate-200">
+          <FormGroup label="Terminal">
+            <input {...register('terminal')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Stand">
+            <input {...register('stand')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Gate">
+            <input {...register('gate')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Hangar">
+            <input {...register('hangar')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Rem. Fuel">
+            <input {...register('rem_fuel')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Fuel Supplied">
+            <input {...register('fuel_supplied')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="FOB (Dep)">
+            <input {...register('fob_dep')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Est. FOB">
+            <input {...register('est_fob')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Est. FOB Date">
+            <input {...register('est_fob_date')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Towing Start">
+            <input {...register('towing_start_position')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Towing End">
+            <input {...register('towing_end_position')} className="input-latam" />
+          </FormGroup>
+          <FormGroup label="Towing Time">
+            <input {...register('towing_date_time')} className="input-latam" />
+          </FormGroup>
+        </div>
+      </section>
+
+      {/* External Info / System */}
+      <section className="space-y-4">
+        <div className="flex items-center gap-2 text-latam-navy">
+          <Copy size={16} strokeWidth={3} />
+          <h3 className="text-[11px] font-black uppercase tracking-widest">Imported Ref. Data</h3>
+        </div>
+        <div className="card-latam p-6 grid grid-cols-1 md:grid-cols-4 gap-6 border border-slate-200 bg-slate-50/10">
+          <FormGroup label="Next Info ID">
+            <input {...register('next_info_id')} className="input-latam opacity-70" />
+          </FormGroup>
+          <FormGroup label="Next Info Time">
+            <input {...register('next_info_time')} className="input-latam opacity-70" />
+          </FormGroup>
+          <FormGroup label="Last Flight ID">
+            <input {...register('last_flight_id')} className="input-latam opacity-70" />
+          </FormGroup>
+          <FormGroup label="Last Flight Time">
+            <input {...register('last_flight_time')} className="input-latam opacity-70" />
+          </FormGroup>
+          <FormGroup label="Ext. Status">
+            <input {...register('raw_status')} className="input-latam opacity-70" />
+          </FormGroup>
+          <FormGroup label="Updated at (Ext)">
+            <input {...register('updated_time')} className="input-latam opacity-70" />
+          </FormGroup>
+          <FormGroup label="Updated by (Ext)">
+            <input {...register('updated_by')} className="input-latam opacity-70" />
           </FormGroup>
         </div>
       </section>

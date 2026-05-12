@@ -6,6 +6,7 @@ import { AlertCircle, Calendar, MessageSquare, Save, CheckCircle2, Clock, User, 
 import { motion, AnimatePresence } from 'motion/react';
 import { AlertRequest } from '../types';
 import { cn } from '../lib/utils';
+import { CancellationModal } from './CancellationModal';
 
 const alertRequestSchema = z.object({
   restrictionName: z.string().min(1, "Nombre de la restricción es requerido"),
@@ -23,7 +24,7 @@ interface AlertRequestSectionProps {
   requests: AlertRequest[];
   onSubmit: (data: any) => void;
   onComplete: (id: string) => void;
-  onCancel: (id: string) => void;
+  onCancel: (id: string, reason: string) => void;
   userEmail: string;
 }
 
@@ -32,23 +33,16 @@ const AUTHORIZED_APPROVERS = [
   'felipe.orostica@latam.com',
   'jahirandres.benavides@latam.com',
   'mariafernanda.lopez@latam.com',
-  'roberto.galleguillos@latam.com'
-];
-
-const AUTHORIZED_REQUESTERS = [
-  'jose.moralesr@latam.com',
-  'alexandra.campos@latam.com',
-  'clemente.pena@latam.com',
-  'felipe.orostica@latam.com',
-  'jahirandres.benavides@latam.com',
-  'mariafernanda.lopez@latam.com',
-  'roberto.galleguillos@latam.com'
+  'roberto.galleguillos@latam.com',
+  'ifn.admin@latam.com',
+  'jta.central@latam.com'
 ];
 
 export const AlertRequestSection = ({ type, requests, onSubmit, onComplete, onCancel, userEmail }: AlertRequestSectionProps) => {
-  const isApprover = AUTHORIZED_APPROVERS.includes(userEmail.toLowerCase());
-  const isRequester = AUTHORIZED_REQUESTERS.includes(userEmail.toLowerCase());
+  const isApprover = AUTHORIZED_APPROVERS.some(email => email.toLowerCase() === userEmail.toLowerCase());
+  const isRequester = true; // Anyone logged in can request
   const [filter, setFilter] = React.useState<'all' | 'pending' | 'completed' | 'cancelled'>('all');
+  const [cancellingRequestId, setCancellingRequestId] = React.useState<string | null>(null);
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm<AlertRequestFormData>({
     resolver: zodResolver(alertRequestSchema)
@@ -234,7 +228,7 @@ export const AlertRequestSection = ({ type, requests, onSubmit, onComplete, onCa
                     <div className="pt-4 border-t border-slate-100 flex justify-end gap-3">
                       {(req.requesterEmail.toLowerCase() === userEmail.toLowerCase() || isApprover) && (
                         <button
-                          onClick={() => onCancel(req.id)}
+                          onClick={() => setCancellingRequestId(req.id)}
                           className="flex items-center gap-2 px-4 py-2 border border-red-200 text-red-500 rounded font-black text-[9px] uppercase tracking-widest hover:bg-red-50 transition-all"
                         >
                           <X size={14} />
@@ -262,6 +256,21 @@ export const AlertRequestSection = ({ type, requests, onSubmit, onComplete, onCa
                       <div>{new Date(req.completedAt!).toLocaleString()}</div>
                     </div>
                   )}
+
+                  {req.status === 'cancelled' && req.cancellationReason && (
+                    <div className="pt-4 border-t border-red-100 space-y-2">
+                      <div className="flex justify-between items-center text-[9px] font-bold text-red-600 uppercase tracking-widest">
+                        <div className="flex items-center gap-2">
+                          <X size={12} />
+                          Anulado por {req.completedBy}
+                        </div>
+                        <div>{new Date(req.completedAt!).toLocaleString()}</div>
+                      </div>
+                      <div className="bg-red-50/50 p-2 rounded text-[10px] text-red-700 italic border border-red-100">
+                        "Justificación: {req.cancellationReason}"
+                      </div>
+                    </div>
+                  )}
                 </motion.div>
               ))
             ) : (
@@ -273,6 +282,17 @@ export const AlertRequestSection = ({ type, requests, onSubmit, onComplete, onCa
           </div>
         </div>
       </div>
+
+      <CancellationModal
+        isOpen={!!cancellingRequestId}
+        onClose={() => setCancellingRequestId(null)}
+        onConfirm={(reason) => {
+          if (cancellingRequestId) {
+            onCancel(cancellingRequestId, reason);
+          }
+        }}
+        requestTitle={requests.find(r => r.id === cancellingRequestId)?.restrictionName || ""}
+      />
     </div>
   );
 };

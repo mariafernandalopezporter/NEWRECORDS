@@ -8,9 +8,10 @@ import { AircraftDetail } from './components/AircraftDetail';
 import { AlertRequestSection } from './components/AlertRequestSection';
 import { dataService } from './services/dataService';
 import { Aircraft, AircraftChecks, Notification as AppNotification, AlertRequest } from './types';
-import { Bell, CheckCircle, Info, Plane, Clock } from 'lucide-react';
+import { Bell, CheckCircle, Info, Plane, Clock, LogIn, LogOut } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from './lib/utils';
+import { User } from 'firebase/auth';
 
 export default function App() {
   const [activeTab, setActiveTab ] = React.useState('dashboard');
@@ -20,22 +21,65 @@ export default function App() {
   const [externalAircrafts, setExternalAircrafts] = React.useState<Aircraft[]>([]);
   const [notifications, setNotifications] = React.useState<AppNotification[]>([]);
   const [alertRequests, setAlertRequests] = React.useState<AlertRequest[]>([]);
-  const userEmail = "mariafernanda.lopez@latam.com";
+  const [user, setUser] = React.useState<User | null>(null);
+  const [loading, setLoading] = React.useState(true);
+  const [authError, setAuthError] = React.useState<string | null>(null);
+
+  const userEmail = user?.email || "";
 
   React.useEffect(() => {
-    loadData();
-    dataService.fetchExternalAircrafts().then(setExternalAircrafts);
+    const unsubscribe = dataService.onAuthChange((authUser) => {
+      if (authUser && authUser.email?.toLowerCase().endsWith('@latam.com')) {
+        setUser(authUser);
+        setAuthError(null);
+      } else if (authUser) {
+        dataService.logout();
+        setAuthError("Debe ingresar con una cuenta @latam.com");
+      } else {
+        setUser(null);
+      }
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
   }, []);
 
+  React.useEffect(() => {
+    let interval: any;
+    if (user) {
+      loadData();
+      // Poll every 10 seconds for real-time updates across users
+      interval = setInterval(loadData, 10000);
+    }
+    return () => {
+      if (interval) clearInterval(interval);
+    };
+  }, [user]);
+
+  const handleLogin = async () => {
+    try {
+      await dataService.signIn();
+    } catch (error) {
+      console.error("Login failed", error);
+    }
+  };
+
+  const handleLogout = async () => {
+    await dataService.logout();
+    setActiveTab('dashboard');
+  };
+
   const loadData = async () => {
-    const [fetchedAircrafts, fetchedNotifications, fetchedAlertRequests] = await Promise.all([
+    const [fetchedAircrafts, fetchedNotifications, fetchedAlertRequests, fetchedExternal] = await Promise.all([
       dataService.getAircrafts(),
       dataService.getNotifications(),
-      dataService.getAlertRequests()
+      dataService.getAlertRequests(),
+      dataService.getExternalAircrafts()
     ]);
     setAircrafts(fetchedAircrafts);
     setNotifications(fetchedNotifications);
     setAlertRequests(fetchedAlertRequests);
+    setExternalAircrafts(fetchedExternal);
   };
 
   const handleCreateAircraft = async (data: any) => {
@@ -81,8 +125,8 @@ export default function App() {
     await loadData();
   };
 
-  const handleCancelAlertRequest = async (id: string) => {
-    await dataService.cancelAlertRequest(id, userEmail);
+  const handleCancelAlertRequest = async (id: string, reason: string) => {
+    await dataService.cancelAlertRequest(id, userEmail, reason);
     await loadData();
   };
 
@@ -222,12 +266,63 @@ export default function App() {
     }
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="w-12 h-12 border-4 border-latam-navy border-t-transparent rounded-full animate-spin" />
+          <p className="text-latam-navy font-black uppercase tracking-widest text-[10px]">Cargando Sistema...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    return (
+      <div className="min-h-screen bg-latam-navy flex items-center justify-center p-4">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8 text-center"
+        >
+          <div className="mb-8">
+            <div className="w-20 h-20 bg-latam-navy text-white rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+              <Plane size={40} />
+            </div>
+            <h1 className="text-2xl font-black text-latam-navy uppercase tracking-tight mb-2">Fleet Activation</h1>
+            <p className="text-slate-500 text-sm font-medium">Gestión de Activaciones y Restricciones de Flota</p>
+          </div>
+
+          {authError && (
+            <div className="mb-6 p-4 bg-red-50 border border-red-100 rounded-xl flex items-center gap-3 text-red-600 text-xs font-bold">
+              <Info size={16} />
+              {authError}
+            </div>
+          )}
+
+          <button 
+            onClick={handleLogin}
+            className="w-full bg-latam-navy hover:bg-slate-800 text-white py-4 rounded-xl font-black uppercase tracking-widest flex items-center justify-center gap-3 transition-all shadow-lg hover:shadow-xl active:scale-[0.98]"
+          >
+            <LogIn size={20} />
+            Ingresar con LATAM
+          </button>
+          
+          <p className="mt-8 text-[10px] text-slate-400 font-bold uppercase tracking-widest">
+            Acceso restringido personal autorizado
+          </p>
+        </motion.div>
+      </div>
+    );
+  }
+
   return (
     <Layout 
       activeTab={activeTab} 
       setActiveTab={setActiveTab} 
       userEmail={userEmail}
       notificationsCount={unreadCount}
+      logout={handleLogout}
     >
       {renderContent()}
     </Layout>

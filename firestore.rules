@@ -1,0 +1,80 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 0. Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Phase 3: Primitives
+    function isValidId(id) { return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); }
+    function incoming() { return request.resource.data; }
+    function existing() { return resource.data; }
+    function isSignedIn() { return request.auth != null; }
+    function isEmailVerified() { return isSignedIn() && request.auth.token.email_verified == true; }
+    function isLatamUser() { return isEmailVerified() && request.auth.token.email.lower().endsWith('@latam.com'); }
+
+    // --- Entity Validation Helpers ---
+
+    function isValidAircraft(data) {
+      return data.ac_owner is string && data.ac_owner.size() <= 100 &&
+             data.ac_registration is string && data.ac_registration.size() <= 20 &&
+             data.ac_type is string &&
+             data.status in ['pending', 'in_progress', 'completed'] &&
+             data.keys().hasAll(['ac_owner', 'ac_registration', 'ac_type', 'status', 'createdAt']);
+    }
+
+    function isValidAlertRequest(data) {
+      return data.type in ['IFN', 'JTA'] &&
+             data.restrictionName is string && data.restrictionName.size() <= 200 &&
+             data.routeInfo is string && data.routeInfo.size() <= 100 &&
+             data.status in ['pending', 'completed', 'cancelled'] &&
+             data.requesterEmail == request.auth.token.email;
+    }
+
+    // --- Collection Routes ---
+
+    match /aircrafts/{aircraftId} {
+      allow read: if isLatamUser();
+      allow create: if isLatamUser() && isValidId(aircraftId) && isValidAircraft(incoming());
+      allow update: if isLatamUser() && isValidId(aircraftId) &&
+                    existing().status != 'completed' &&
+                    (
+                      // Action: Check area
+                      (incoming().diff(existing()).affectedKeys().hasOnly(['checks', 'status'])) ||
+                      // Action: Edit details
+                      (incoming().diff(existing()).affectedKeys().hasOnly(['ac_owner', 'ac_registration', 'ac_type', 'base_airport', 'acr', 'ac_subtype', 'rotation_code', 'valid_from', 'valid_to', 'physical_j', 'physical_w', 'physical_y', 'remarks']))
+                    );
+      allow delete: if isLatamUser() && existing().status == 'pending';
+    }
+
+    match /alert_requests/{requestId} {
+      allow read: if isLatamUser();
+      allow create: if isLatamUser() && isValidId(requestId) && isValidAlertRequest(incoming());
+      allow update: if isLatamUser() && isValidId(requestId) &&
+                    existing().status == 'pending' &&
+                    (
+                      // Action: Complete
+                      (incoming().status == 'completed' && incoming().diff(existing()).affectedKeys().hasOnly(['status', 'completedBy', 'completedAt'])) ||
+                      // Action: Cancel
+                      (incoming().status == 'cancelled' && incoming().diff(existing()).affectedKeys().hasOnly(['status', 'cancellationReason', 'completedBy', 'completedAt']))
+                    );
+    }
+
+    match /notifications/{notificationId} {
+      allow read: if isLatamUser();
+      allow create: if isLatamUser();
+      allow update: if isLatamUser() && incoming().diff(existing()).affectedKeys().hasOnly(['read_by']);
+    }
+
+    match /base_changes/{changeId} {
+      allow read: if isLatamUser();
+      allow create: if isLatamUser();
+    }
+
+    match /operator_changes/{changeId} {
+      allow read: if isLatamUser();
+      allow create: if isLatamUser();
+    }
+  }
+}

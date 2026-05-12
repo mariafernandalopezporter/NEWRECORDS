@@ -27,26 +27,24 @@ export const ALL_USERS = [
   'mariafernanda.lopez@latam.com', 
   'jahirandres.benavides@latam.com',
   'felipe.orostica@latam.com',
-  'dan.bravo@latam.com',
   'gonzalo.roco@latam.com',
   'thiago.nunes@latam.com',
-  'Joseilys.Vasquez@latam.com',
   'cristina.quelal@latam.com'
 ];
 
 export const AREA_PERMISSIONS: Record<keyof AircraftChecks, string[]> = {
-  ifn: ['felipesilva.stefanini@latam.com', 'mariafernanda.lopez@latam.com', 'jahirandres.benavides@latam.com'],
-  limops: ['jahirandres.benavides@latam.com', 'mariafernanda.lopez@latam.com', 'felipesilva.stefanini@latam.com'],
-  jta: ['felipe.orostica@latam.com', 'felipesilva.stefanini@latam.com'],
-  aircom: ['dan.bravo@latam.com'],
-  sicco: ['gonzalo.roco@latam.com'],
-  ops_flt: ['felipesilva.stefanini@latam.com', 'gonzalo.roco@latam.com'],
-  despacho: ['thiago.nunes@latam.com'],
-  mantenedor: ['felipesilva.stefanini@latam.com'],
-  videowall: ['Joseilys.Vasquez@latam.com'],
-  crew: ['cristina.quelal@latam.com'],
-  diccionario: ['felipesilva.stefanini@latam.com', 'mariafernanda.lopez@latam.com', 'jahirandres.benavides@latam.com'],
-  jira_ticket: ALL_USERS
+  ifn: ['felipesilva.stefanini@latam.com', 'mariafernanda.lopez@latam.com'],
+  limops: ['felipesilva.stefanini@latam.com', 'mariafernanda.lopez@latam.com'],
+  jta: ['felipe.orostica@latam.com', 'mariafernanda.lopez@latam.com', 'jahirandres.benavides@latam.com'],
+  aircom: ['aircom.tech@latam.com', 'mariafernanda.lopez@latam.com', 'dan.bravo@latam.com'],
+  sicco: ['gonzalo.roco@latam.com', 'mariafernanda.lopez@latam.com', 'felipesilva.stefanini@latam.com'],
+  ops_flt: ['flt.ops@latam.com', 'mariafernanda.lopez@latam.com', 'felipesilva.stefanini@latam.com'],
+  despacho: ['thiago.nunes@latam.com', 'mariafernanda.lopez@latam.com'],
+  mantenedor: ['mantenimiento.tech@latam.com', 'mariafernanda.lopez@latam.com'],
+  videowall: ['videowall.ops@latam.com', 'mariafernanda.lopez@latam.com', 'Joseilys.Vasquez@latam.com'],
+  crew: ['cristina.quelal@latam.com', 'mariafernanda.lopez@latam.com'],
+  diccionario: ['felipesilva.stefanini@latam.com', 'gonzalo.roco@latam.com', 'felipe.orostica@latam.com', 'mariafernanda.lopez@latam.com'],
+  jira_ticket: ['felipe.orostica@latam.com', 'mariafernanda.lopez@latam.com', 'gonzalo.roco@latam.com', 'felipesilva.stefanini@latam.com']
 };
 
 export type ActivationType = 'new_registry' | 'base_change' | 'operator_change';
@@ -54,6 +52,8 @@ export type ActivationType = 'new_registry' | 'base_change' | 'operator_change';
 export interface Aircraft {
   id: string;
   activation_type: ActivationType;
+  
+  // Basic Info (A-I)
   ac_owner: string;
   ac_registration: string;
   acr: string;
@@ -62,19 +62,71 @@ export interface Aircraft {
   valid_from: string;
   valid_to: string;
   ac_type: string;
+  
+  // Technical Details (J-O)
   rst: string;
+  local_type?: string;
+  local_subtype?: string;
   icao_subtype: string;
   base_airport: string;
   category: string;
+  
+  // Identity & Status (P-Y)
+  name?: string;
+  active?: string;
+  etops?: string;
+  flight_range?: string;
   rff: string;
   manufacturer: string;
   man_serial: string;
   engine: string;
   engine_type: string;
   delivered: string;
+
+  // Performance & weights (Z-AH)
+  selcal?: string;
+  perf_index?: string;
+  max_dow?: string;
+  max_zfw?: string;
+  max_rw?: string;
+  max_tow?: string;
+  max_lw?: string;
+  hold_cap_vol?: string;
+  hold_cap_wgt?: string;
+
+  // Configuration (AI-AO)
   physical_j?: number;
   physical_w?: number;
   physical_y?: number;
+  tail_wind?: string;
+  cross_wind?: string;
+  cabin_jump_seat?: string;
+  cockpit_jump_seat?: string;
+
+  // Operational (AQ-BB)
+  rem_fuel?: string;
+  fuel_supplied?: string;
+  fob_dep?: string;
+  est_fob?: string;
+  est_fob_date?: string;
+  terminal?: string;
+  stand?: string;
+  hangar?: string;
+  gate?: string;
+  towing_start_position?: string;
+  towing_end_position?: string;
+  towing_date_time?: string;
+
+  // Tracking (BC-BI)
+  next_info_id?: string;
+  next_info_time?: string;
+  last_flight_id?: string;
+  last_flight_time?: string;
+  raw_status?: string;
+  updated_time?: string;
+  updated_by?: string;
+
+  // Workflow System Fields
   remarks: string;
   checks: AircraftChecks;
   status: AircraftStatus;
@@ -122,6 +174,7 @@ export interface AlertRequest {
   replacesRestriction?: string;
   remarks: string;
   status: 'pending' | 'completed' | 'cancelled';
+  cancellationReason?: string;
   requesterEmail: string;
   completedBy?: string;
   completedAt?: string;

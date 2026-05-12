@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plane, ChevronLeft, CheckCircle2, Clock, User, Calendar, MessageSquare, AlertCircle, MapPin, Lock, Database, ExternalLink, X, Pencil, Trash2 } from 'lucide-react';
+import { Plane, ChevronLeft, CheckCircle2, Clock, User, Calendar, MessageSquare, AlertCircle, MapPin, Lock, Database, ExternalLink, X, Pencil, Trash2, Settings } from 'lucide-react';
 import { Aircraft, AircraftChecks, AREA_PERMISSIONS } from '../types';
 import { StatusBadge } from './Dashboard';
 import { cn } from '../lib/utils';
@@ -155,10 +155,12 @@ export const AircraftDetail = ({ aircraft, onBack, onCheck, onEdit, onDelete, us
         </div>
       </div>
 
+      {/* Main Content Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
         {/* LEFT: System Summary (The Design Request) */}
         <div className="lg:col-span-12">
-          <div className="bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 overflow-hidden">
+          {/* Status/Checklist Card */}
+          <div className="bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 overflow-hidden mb-10">
             <div className="p-8 border-b border-slate-50 flex items-center justify-between bg-slate-50/30">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 bg-latam-magenta text-white rounded-xl shadow-lg shadow-latam-magenta/20 flex items-center justify-center">
@@ -175,7 +177,7 @@ export const AircraftDetail = ({ aircraft, onBack, onCheck, onEdit, onDelete, us
               </div>
             </div>
 
-            <div className="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
+            <div className="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-10">
               {activeGroups.map((group, idx) => (
                 <div key={idx} className="space-y-4 group">
                   <div className="flex justify-between items-end">
@@ -201,8 +203,6 @@ export const AircraftDetail = ({ aircraft, onBack, onCheck, onEdit, onDelete, us
                         value={aircraft.checks[areaId]?.value}
                         isAllowed={AREA_PERMISSIONS[areaId].some(email => email.toLowerCase() === userEmail.toLowerCase())}
                         onCheck={() => {
-                          // Allow clicking Jira Ticket even if checked to update link, 
-                          // but others only if not checked
                           if (areaId === 'jira_ticket' || !aircraft.checks[areaId]?.checked) {
                             handleAreaCheck(areaId);
                           }
@@ -220,6 +220,107 @@ export const AircraftDetail = ({ aircraft, onBack, onCheck, onEdit, onDelete, us
                  <LegendItem color="bg-slate-200" label="Pending" />
                  <LegendItem color="bg-red-500" label="Action Required" />
                </div>
+            </div>
+          </div>
+
+          {/* New technical details section */}
+          <div className="bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 overflow-hidden">
+            <div className="p-8 border-b border-slate-50 flex items-center gap-4 bg-slate-50/10">
+              <div className="w-10 h-10 bg-latam-navy text-white rounded-xl flex items-center justify-center">
+                <Settings size={20} />
+              </div>
+              <h2 className="text-lg font-black font-display tracking-widest text-latam-navy uppercase leading-none">
+                Technical Mastery Overview
+              </h2>
+            </div>
+            
+            <div className="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+              {/* Technical Group */}
+              <div className="space-y-4">
+                <h3 className="text-[10px] font-black uppercase tracking-widest text-latam-magenta">Technical classification</h3>
+                <div className="space-y-3">
+                  <DataRow label="Name/ID" value={aircraft.name} />
+                  <DataRow label="Rot Code" value={aircraft.rotation_code} />
+                  <DataRow label="ACR" value={aircraft.acr} />
+                  <DataRow label="ICAO Subtype" value={aircraft.icao_subtype} />
+                  <DataRow label="RST" value={aircraft.rst} />
+                  <DataRow label="Local Type" value={aircraft.local_type} />
+                  <DataRow label="Local Subtype" value={aircraft.local_subtype} />
+                  <DataRow label="Active" value={aircraft.active} />
+                </div>
+              </div>
+
+              {/* Engineering Group */}
+              <div className="space-y-4">
+                <h3 className="text-[10px] font-black uppercase tracking-widest text-latam-magenta">Engineering & Specs</h3>
+                <div className="space-y-3">
+                  <DataRow label="Manufacturer" value={aircraft.manufacturer} />
+                  <DataRow label="Serial" value={aircraft.man_serial} />
+                  <DataRow label="Engine" value={aircraft.engine} />
+                  <DataRow label="Engine Type" value={aircraft.engine_type} />
+                  <DataRow label="Delivered" value={aircraft.delivered} />
+                  <DataRow label="ETOPS" value={aircraft.etops} />
+                  <DataRow label="Range" value={aircraft.flight_range} />
+                  <DataRow label="SELCAL" value={aircraft.selcal} />
+                  <DataRow label="Performance Ind." value={aircraft.perf_index} />
+                </div>
+              </div>
+
+              {/* Performance / Weights Group */}
+              <div className="space-y-4">
+                <h3 className="text-[10px] font-black uppercase tracking-widest text-latam-magenta">Weights & limits</h3>
+                <div className="space-y-3">
+                  <DataRow label="Max DOW" value={aircraft.max_dow} />
+                  <DataRow label="Max ZFW" value={aircraft.max_zfw} />
+                  <DataRow label="Max RW" value={aircraft.max_rw} />
+                  <DataRow label="Max TOW" value={aircraft.max_tow} />
+                  <DataRow label="Max LW" value={aircraft.max_lw} />
+                  <DataRow label="Hold (Vol)" value={aircraft.hold_cap_vol} />
+                  <DataRow label="Hold (Wgt)" value={aircraft.hold_cap_wgt} />
+                  <DataRow label="Tail Wind" value={aircraft.tail_wind} />
+                  <DataRow label="Cross Wind" value={aircraft.cross_wind} />
+                </div>
+              </div>
+
+              {/* Operational Group */}
+              <div className="space-y-4">
+                <h3 className="text-[10px] font-black uppercase tracking-widest text-latam-magenta">Operational Data</h3>
+                <div className="space-y-3">
+                  <DataRow label="Base Airport" value={aircraft.base_airport} />
+                  <DataRow label="Terminal" value={aircraft.terminal} />
+                  <DataRow label="Stand" value={aircraft.stand} />
+                  <DataRow label="Gate" value={aircraft.gate} />
+                  <DataRow label="FOB (Dep)" value={aircraft.fob_dep} />
+                  <DataRow label="Est. FOB" value={aircraft.est_fob} />
+                  <DataRow label="Jump Seats (Cab)" value={aircraft.cabin_jump_seat} />
+                  <DataRow label="Jump Seats (Cock)" value={aircraft.cockpit_jump_seat} />
+                </div>
+              </div>
+            </div>
+
+            <div className="p-8 bg-slate-50/50 grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-slate-100">
+              <div className="flex flex-col">
+                <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-2">Towing Operations</span>
+                <div className="text-[11px] font-bold text-latam-navy space-y-1">
+                  <div>Start: {aircraft.towing_start_position || '--'}</div>
+                  <div>End: {aircraft.towing_end_position || '--'}</div>
+                  <div className="text-slate-400 font-mono italic">{aircraft.towing_date_time || '--'}</div>
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-2">Ref. Tracking</span>
+                <div className="text-[11px] font-bold text-latam-navy space-y-1">
+                  <div>Next ID: {aircraft.next_info_id || '--'}</div>
+                  <div>Last Flight: {aircraft.last_flight_id || '--'}</div>
+                </div>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-2">Metadata Audit</span>
+                <div className="text-[11px] font-bold text-latam-navy space-y-1">
+                  <div>Updated at: {aircraft.updated_time || '--'}</div>
+                  <div>Updated by: {aircraft.updated_by || '--'}</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
