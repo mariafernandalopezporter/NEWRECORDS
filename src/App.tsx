@@ -1,4 +1,5 @@
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Layout } from './components/layout/Layout';
 import { Dashboard } from './components/Dashboard';
 import { AircraftsList } from './components/AircraftsList';
@@ -317,15 +318,17 @@ export default function App() {
   }
 
   return (
-    <Layout 
-      activeTab={activeTab} 
-      setActiveTab={setActiveTab} 
-      userEmail={userEmail}
-      notificationsCount={unreadCount}
-      logout={handleLogout}
-    >
-      {renderContent()}
-    </Layout>
+    <>
+      <Layout 
+        activeTab={activeTab} 
+        setActiveTab={setActiveTab} 
+        userEmail={userEmail}
+        notificationsCount={unreadCount}
+      >
+        {renderContent()}
+      </Layout>
+      <Analytics />
+    </>
   );
 }
 
