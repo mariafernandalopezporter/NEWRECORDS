@@ -1,5 +1,6 @@
 import {Aircraft, Notification, BaseChange, OperatorChange, ActivationType, CheckStatus, AircraftChecks, AREA_PERMISSIONS, ALL_USERS, AlertRequest} from '../types';
 import Papa from 'papaparse';
+import externalAircraftsData from '../data/external_aircrafts.json';
 import { initializeApp } from 'firebase/app';
 import { 
   getFirestore, 
@@ -51,6 +52,7 @@ class DataService {
   private isFirebaseReady = false;
 
   constructor() {
+    this.externalAircrafts = externalAircraftsData as Aircraft[];
     this.initLocalFallback();
     this.startPolling();
     initializeFirebase()
