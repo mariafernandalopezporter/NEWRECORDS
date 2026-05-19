@@ -1,1568 +1,8 @@
 [
   {
-    "id": "shared-1-0zgbg",
+    "id": "ccv-0",
     "activation_type": "new_registry",
-    "ac_owner": "LA",
-    "ac_registration": "CC-BAM",
-    "acr": "BAM",
-    "ac_subtype": "320",
-    "rotation_code": "L",
-    "valid_from": "2026-05-15 08:00:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "320",
-    "rst": "320L",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "LIM",
-    "category": "",
-    "name": "CC-BAM ($$)",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "6",
-    "manufacturer": "AIRBUS",
-    "man_serial": "4697",
-    "engine": "IAE",
-    "engine_type": "V2527-A5",
-    "delivered": "2011-05-09 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 0,
-    "physical_y": 168,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: CC-BAM\nMLW: 66.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "167KG",
-    "est_fob_date": "2026-05-04 08:27:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "11,111,146",
-    "last_flight_time": "2026-05-06 12:14:00.000",
-    "raw_status": "TAXIOUT",
-    "updated_time": "2026-05-05 21:08:08.000",
-    "updated_by": "04615857",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-2-bc7cm",
-    "activation_type": "new_registry",
-    "ac_owner": "JJ",
-    "ac_registration": "PT-XPM",
-    "acr": "XPM",
-    "ac_subtype": "321",
-    "rotation_code": "X",
-    "valid_from": "2026-05-14 07:55:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "321",
-    "rst": "321X",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "SCL",
-    "category": "CAT3",
-    "name": "PT-XPM [RNP][INT]",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "7",
-    "manufacturer": "AIRBUS",
-    "man_serial": "6949",
-    "engine": "CFM",
-    "engine_type": "CFM56-5B3/3",
-    "delivered": "2016-02-04 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 8,
-    "physical_y": 212,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: PT-XPM\nMLW: 89.000\nOXYGEN: 22\nRNP: ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nNEW PAINT: YES\nAUTHORIZED: AEP, EZE, LIM, MVD, PDP, SCL\nINTERCHANGE:YES",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "163KG",
-    "est_fob_date": "2026-05-06 13:50:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "11,110,265",
-    "last_flight_time": "2026-05-06 08:25:00.000",
-    "raw_status": "ENRT",
-    "updated_time": "2026-05-05 20:45:57.000",
-    "updated_by": "04615857",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-3-glcl6",
-    "activation_type": "new_registry",
-    "ac_owner": "JJ",
-    "ac_registration": "PT-XPQ",
-    "acr": "XPQ",
-    "ac_subtype": "321",
-    "rotation_code": "X",
-    "valid_from": "2026-05-14 05:10:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "321",
-    "rst": "321X",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "GRU",
-    "category": "CAT3",
-    "name": "PT-XPQ [RNP][INT]",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "7",
-    "manufacturer": "AIRBUS",
-    "man_serial": "7081",
-    "engine": "CFM",
-    "engine_type": "CFM56-5B3/3",
-    "delivered": "2016-04-28 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 8,
-    "physical_y": 212,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: PT-XPQ\nMLW: 89.000\nOXYGEN: 22\nRNP: ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nSPACEFLEX:\nNEW PAINT: YES\nAUTHORIZED: AEP, COR, EZE, ROS, SCL",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "176KG",
-    "est_fob_date": "2026-05-06 13:58:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "11,110,329",
-    "last_flight_time": "2026-05-06 12:58:00.000",
-    "raw_status": "IDLE",
-    "updated_time": "2026-05-05 20:47:15.000",
-    "updated_by": "04615857",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-4-u1oci",
-    "activation_type": "new_registry",
-    "ac_owner": "JJ",
-    "ac_registration": "PT-XPC",
-    "acr": "XPC",
-    "ac_subtype": "321",
-    "rotation_code": "X",
-    "valid_from": "2026-05-11 15:50:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "321",
-    "rst": "321X",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "SCL",
-    "category": "CAT3",
-    "name": "PT-XPC [RNP][INT]",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "7",
-    "manufacturer": "AIRBUS",
-    "man_serial": "6592",
-    "engine": "CFM",
-    "engine_type": "CFM56-5B3/3",
-    "delivered": "2015-05-07 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 8,
-    "physical_y": 212,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: PT-XPC\nOXYGEN: 22\nRNP:ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGAÇÃO: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nSPACEFLEX:NO\nNEW PAINT:YES\nAUTHORIZED:AEP,ASU,COR,EZE,LIM,MVD,ROS,SCL\nINTERCHANGE:YES",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "88KG",
-    "est_fob_date": "2026-05-06 13:59:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "11,040,763",
-    "last_flight_time": "2026-05-06 12:55:00.000",
-    "raw_status": "IDLE",
-    "updated_time": "2026-05-05 20:42:33.000",
-    "updated_by": "04615857",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-5-un93y",
-    "activation_type": "new_registry",
-    "ac_owner": "JJ",
-    "ac_registration": "PT-XPF",
-    "acr": "XPF",
-    "ac_subtype": "321",
-    "rotation_code": "X",
-    "valid_from": "2026-05-11 08:05:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "321",
-    "rst": "321X",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "SCL",
-    "category": "CAT3",
-    "name": "PT-XPF [RNP][INT]",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "7",
-    "manufacturer": "AIRBUS",
-    "man_serial": "6670",
-    "engine": "CFM",
-    "engine_type": "CFM56-5B3/3",
-    "delivered": "2015-07-09 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 8,
-    "physical_y": 212,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: PT-XPF\nOXYGEN: 22\nRNP: ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nSPACEFLEX: NO\nNEW PAINT: NO\nAUTHORIZED: AEP, ASU, COR, EZE, LIM, MVD, ROS, SCL.",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "99KG",
-    "est_fob_date": "2026-05-06 14:12:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "10,944,343",
-    "last_flight_time": "2026-05-06 10:56:00.000",
-    "raw_status": "ENRT",
-    "updated_time": "2026-04-28 14:25:11.000",
-    "updated_by": "04820691",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-6-zf0tx",
-    "activation_type": "new_registry",
-    "ac_owner": "LA",
-    "ac_registration": "CC-BAE",
-    "acr": "BAE",
-    "ac_subtype": "320",
-    "rotation_code": "L",
-    "valid_from": "2026-05-11 07:15:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "320",
-    "rst": "320L",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "LIM",
-    "category": "",
-    "name": "CC-BAE TOBOGAN",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "6",
-    "manufacturer": "AIRBUS",
-    "man_serial": "4509",
-    "engine": "IAE",
-    "engine_type": "V2527-A5",
-    "delivered": "2010-11-26 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 0,
-    "physical_y": 168,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: CC-BAE\nMLW: 66.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "109KG",
-    "est_fob_date": "2026-05-05 21:26:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "11,091,609",
-    "last_flight_time": "2026-05-05 19:44:00.000",
-    "raw_status": "MAINT",
-    "updated_time": "2026-04-28 15:10:17.000",
-    "updated_by": "04820691",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-7-0yfwk",
-    "activation_type": "new_registry",
-    "ac_owner": "XL",
-    "ac_registration": "CC-CYJ",
-    "acr": "CYJ",
-    "ac_subtype": "319",
-    "rotation_code": "C",
-    "valid_from": "2026-05-11 05:50:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "319",
-    "rst": "319C",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "UIO",
-    "category": "",
-    "name": "CC-CYJ ($$$)",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "6",
-    "manufacturer": "AIRBUS",
-    "man_serial": "3772",
-    "engine": "IAE",
-    "engine_type": "V2524-A5",
-    "delivered": "2009-01-27 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 0,
-    "physical_y": 144,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: CC-CYJ\nMLW: 62.500\nMTOW: 70.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: V2524-A5 Basic\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "86KG",
-    "est_fob_date": "2026-05-06 14:40:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "10,944,319",
-    "last_flight_time": "2026-05-06 05:13:00.000",
-    "raw_status": "ENRT",
-    "updated_time": "2026-04-28 14:05:45.000",
-    "updated_by": "04820691",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-8-rby4w",
-    "activation_type": "new_registry",
-    "ac_owner": "JJ",
-    "ac_registration": "PT-XPO",
-    "acr": "XPO",
-    "ac_subtype": "321",
-    "rotation_code": "X",
-    "valid_from": "2026-05-11 05:10:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "321",
-    "rst": "321X",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "GRU",
-    "category": "CAT3",
-    "name": "PT-XPO [RNP][INT]",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "7",
-    "manufacturer": "AIRBUS",
-    "man_serial": "7098",
-    "engine": "CFM",
-    "engine_type": "CFM56-5B3/3",
-    "delivered": "2016-05-18 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 8,
-    "physical_y": 212,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: PT-XPO\nOXY: 22\nRNP:ONLY GENERIC RNP-AR\nPZ:NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET:YES\nSPACEFLEX: NO/ SMARTLAV: YES\nNEW PAINT:YES\nAUTHORIZED AEP,ASU,EZE,LIM,MVD,PDP,SCL\nINTERCHANGE:YES",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "161KG",
-    "est_fob_date": "2026-05-06 14:43:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "11,039,976",
-    "last_flight_time": "2026-05-06 09:54:00.000",
-    "raw_status": "ENRT",
-    "updated_time": "2026-05-05 20:29:24.000",
-    "updated_by": "04615857",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-9-pcsqy",
-    "activation_type": "new_registry",
-    "ac_owner": "JJ",
-    "ac_registration": "PT-XPI",
-    "acr": "XPI",
-    "ac_subtype": "321",
-    "rotation_code": "X",
-    "valid_from": "2026-05-10 08:05:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "321",
-    "rst": "321X",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "SCL",
-    "category": "CAT3",
-    "name": "PT-XPI [RNP][INT]",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "7",
-    "manufacturer": "AIRBUS",
-    "man_serial": "6729",
-    "engine": "CFM",
-    "engine_type": "CFM56-5B3/3",
-    "delivered": "2015-08-11 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 8,
-    "physical_y": 212,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: PT-XPI\nOXY: 22\nRNP:ONLY GENERIC RNP-AR\nLIP:NO\nPZ:NO\nFUMIGATION: YES\nMOTORIZAÇÃO: CFM56-5B3\nSHARKLET:YES\nSPACEFLEX:NO\nNEW PAINT:YES\nAUTHORIZED:AEP,ASU,COR, EZE,LIM,MVD,ROS,SCL\nINTERCHANGE:YES",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "244KG",
-    "est_fob_date": "2026-05-06 14:52:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "11,040,914",
-    "last_flight_time": "2026-05-06 11:16:00.000",
-    "raw_status": "ENRT",
-    "updated_time": "2026-04-28 14:19:04.000",
-    "updated_by": "04820691",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-10-uhd7z",
-    "activation_type": "new_registry",
-    "ac_owner": "LP",
-    "ac_registration": "CC-CPI",
-    "acr": "CPI",
-    "ac_subtype": "319",
-    "rotation_code": "C",
-    "valid_from": "2026-05-07 05:45:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "319",
-    "rst": "319C",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "LIM",
-    "category": "CAT3",
-    "name": "CC-CPI ($$$)",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "6",
-    "manufacturer": "AIRBUS",
-    "man_serial": "2585",
-    "engine": "IAE",
-    "engine_type": "V2524-A5",
-    "delivered": "2005-10-25 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 0,
-    "physical_y": 144,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: CC-CPI\nMLW: 62.500\nMTOW: 70.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: V2524-A5 Basic\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "87KG",
-    "est_fob_date": "2026-05-06 13:31:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "10,944,237",
-    "last_flight_time": "2026-05-06 12:42:00.000",
-    "raw_status": "IDLE",
-    "updated_time": "2026-04-28 13:53:48.000",
-    "updated_by": "04820691",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-11-r8yc0",
-    "activation_type": "new_registry",
-    "ac_owner": "LA",
-    "ac_registration": "CC-COQ",
-    "acr": "COQ",
-    "ac_subtype": "320",
-    "rotation_code": "L",
-    "valid_from": "2026-05-06 08:55:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "320",
-    "rst": "320L",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "BOG",
-    "category": "CAT3",
-    "name": "CC-COQ ($$$)",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "6",
-    "manufacturer": "AIRBUS",
-    "man_serial": "1877",
-    "engine": "IAE",
-    "engine_type": "V2527E-A5",
-    "delivered": "2002-11-08 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 0,
-    "physical_y": 168,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: CC-COQ\nMLW: 64.500\nMTOW: 73.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE:\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "277KG",
-    "est_fob_date": "2026-05-06 09:06:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "10,944,164",
-    "last_flight_time": "2026-05-06 10:39:00.000",
-    "raw_status": "ENRT",
-    "updated_time": "2026-04-28 15:04:39.000",
-    "updated_by": "04820691",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-12-p5a10",
-    "activation_type": "new_registry",
-    "ac_owner": "JJ",
-    "ac_registration": "PT-XPO",
-    "acr": "XPO",
-    "ac_subtype": "321",
-    "rotation_code": "X",
-    "valid_from": "2026-05-06 08:10:00.000",
-    "valid_to": "2026-05-11 05:09:00.000",
-    "ac_type": "321",
-    "rst": "321X",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "SCL",
-    "category": "CAT3",
-    "name": "PT-XPO [RNP][INT]",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "7",
-    "manufacturer": "AIRBUS",
-    "man_serial": "7098",
-    "engine": "CFM",
-    "engine_type": "CFM56-5B3/3",
-    "delivered": "2016-05-18 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 8,
-    "physical_y": 212,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: PT-XPO\nOXY: 22\nRNP:ONLY GENERIC RNP-AR\nPZ:NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET:YES\nSPACEFLEX: NO/ SMARTLAV: YES\nNEW PAINT:YES\nAUTHORIZED AEP,ASU,EZE,LIM,MVD,PDP,SCL\nINTERCHANGE:YES",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "161KG",
-    "est_fob_date": "2026-05-06 14:43:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "11,039,976",
-    "last_flight_time": "2026-05-06 09:54:00.000",
-    "raw_status": "ENRT",
-    "updated_time": "2026-05-05 20:29:43.000",
-    "updated_by": "04615857",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-13-u9ssi",
-    "activation_type": "new_registry",
-    "ac_owner": "LA",
-    "ac_registration": "CC-BAJ",
-    "acr": "BAJ",
-    "ac_subtype": "320",
-    "rotation_code": "L",
-    "valid_from": "2026-05-06 08:00:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "320",
-    "rst": "320L",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "SCL",
-    "category": "",
-    "name": "CC-BAJ ($)",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "6",
-    "manufacturer": "AIRBUS",
-    "man_serial": "4576",
-    "engine": "IAE",
-    "engine_type": "V2527-A5",
-    "delivered": "2011-02-12 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 0,
-    "physical_y": 168,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: CC-BAJ\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "82KG",
-    "est_fob_date": "2026-05-06 10:44:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "11,864,087",
-    "last_flight_time": "2026-05-06 04:56:00.000",
-    "raw_status": "IDLE",
-    "updated_time": "2026-04-28 14:51:09.000",
-    "updated_by": "04820691",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-14-l9jjl",
-    "activation_type": "new_registry",
-    "ac_owner": "LA",
-    "ac_registration": "CC-BAA",
-    "acr": "BAA",
-    "ac_subtype": "320",
-    "rotation_code": "L",
-    "valid_from": "2026-05-05 07:50:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "320",
-    "rst": "320L",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "LIM",
-    "category": "",
-    "name": "CC-BAA ($)",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "6",
-    "manufacturer": "AIRBUS",
-    "man_serial": "4383",
-    "engine": "IAE",
-    "engine_type": "V2527E-A5",
-    "delivered": "2010-07-26 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 0,
-    "physical_y": 168,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "AIRCRAFT: CC-BAA\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527E-A5 Select One\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "310KG",
-    "est_fob_date": "2026-05-06 13:17:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "11,040,895",
-    "last_flight_time": "2026-05-06 09:13:00.000",
-    "raw_status": "IDLE",
-    "updated_time": "2026-04-29 18:31:00.000",
-    "updated_by": "04820691",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-15-idoq5",
-    "activation_type": "new_registry",
-    "ac_owner": "JJ",
-    "ac_registration": "PR-TYM",
-    "acr": "TYM",
-    "ac_subtype": "320",
-    "rotation_code": "L",
-    "valid_from": "2026-05-05 07:10:00.000",
-    "valid_to": "2051-12-31 23:59:00.000",
-    "ac_type": "320",
-    "rst": "320L",
-    "local_type": "",
-    "local_subtype": "",
-    "icao_subtype": "",
-    "base_airport": "SCL",
-    "category": "",
-    "name": "PR-TYM [RNP][INT]",
-    "active": "Y",
-    "etops": "",
-    "flight_range": "",
-    "rff": "6",
-    "manufacturer": "AIRBUS",
-    "man_serial": "6561",
-    "engine": "CFM",
-    "engine_type": "CFM56-5B4/3",
-    "delivered": "2019-07-17 00:00:00.000",
-    "selcal": "",
-    "perf_index": "0",
-    "max_dow": "",
-    "max_zfw": "",
-    "max_rw": "",
-    "max_tow": "",
-    "max_lw": "",
-    "hold_cap_vol": "",
-    "hold_cap_wgt": "",
-    "physical_j": 0,
-    "physical_w": 8,
-    "physical_y": 168,
-    "tail_wind": "",
-    "cross_wind": "",
-    "cabin_jump_seat": "",
-    "cockpit_jump_seat": "",
-    "remarks": "A/C:PR-TYM\nMTOW:78000\nMLW:66.000\nOXY:22\nRNP:ONLY GENERIC RNP-AR\nLIP:NO\nPZ:NO\nFUMIGATION:YES\nENGINE:CFM56-5B4/3\nSHARKLET:YES\nAUTHORIZED: AEP,BOG,BRC,COR,EZE,LIM,MDZ,MVD,PDP,SCL\nADS-B:NO\nINTERCHANGE:YES",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "247KG",
-    "est_fob_date": "2026-05-06 15:29:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "11,069,932",
-    "last_flight_time": "2026-05-05 22:18:00.000",
-    "raw_status": "ENRT",
-    "updated_time": "2026-04-29 18:34:07.000",
-    "updated_by": "04820691",
-    "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.614Z",
-    "checks": {
-      "ifn": {
-        "checked": false
-      },
-      "limops": {
-        "checked": false
-      },
-      "jta": {
-        "checked": false
-      },
-      "aircom": {
-        "checked": false
-      },
-      "sicco": {
-        "checked": false
-      },
-      "ops_flt": {
-        "checked": false
-      },
-      "despacho": {
-        "checked": false
-      },
-      "mantenedor": {
-        "checked": false
-      },
-      "videowall": {
-        "checked": false
-      },
-      "crew": {
-        "checked": false
-      },
-      "diccionario": {
-        "checked": false
-      },
-      "jira_ticket": {
-        "checked": false
-      }
-    }
-  },
-  {
-    "id": "shared-0-xdehg",
-    "activation_type": "new_registry",
-    "ac_owner": "JJ",
+    "ac_owner": "LATAM BRASIL",
     "ac_registration": "PT-XPJ",
     "acr": "XPJ",
     "ac_subtype": "321",
@@ -1577,7 +17,7 @@
     "base_airport": "GRU",
     "category": "CAT3",
     "name": "PT-XPJ [RNP][INT]",
-    "active": "Y",
+    "active": "TRUE",
     "etops": "",
     "flight_range": "",
     "rff": "7",
@@ -1603,27 +43,2558 @@
     "cabin_jump_seat": "",
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: PT-XPJ\nMLW: 89.000\nOXYGEN: 22\nRNP:ONLY GENERIC RNP-AR\nLIP:NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3/3\nSHARKLET: YES\nNEW PAINT: NO\nAUTHORIZED: AEP, COR, EZE, LIM, ROS, SCL\nINTERCHANGE:YES",
-    "rem_fuel": "",
-    "fuel_supplied": "",
-    "fob_dep": "",
-    "est_fob": "116KG",
-    "est_fob_date": "2026-05-06 02:00:00.000",
-    "terminal": "",
-    "stand": "",
-    "hangar": "",
-    "gate": "",
-    "towing_start_position": "",
-    "towing_end_position": "",
-    "towing_date_time": "",
-    "next_info_id": "",
-    "next_info_time": "",
-    "last_flight_id": "11,065,955",
-    "last_flight_time": "2026-05-06 00:18:00.000",
-    "raw_status": "TAXIOUT",
-    "updated_time": "2026-05-05 21:06:06.000",
-    "updated_by": "04615857",
     "status": "pending",
-    "createdAt": "2026-05-07T18:27:19.613Z",
+    "createdAt": "2026-05-18T17:02:41.422Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-1",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BAM",
+    "acr": "BAM",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-05-15 08:00:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "LIM",
+    "category": "",
+    "name": "CC-BAM ($$)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "4697",
+    "engine": "IAE",
+    "engine_type": "V2527-A5",
+    "delivered": "2011-05-09 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 168,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BAM\nMLW: 66.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.422Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-2",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM BRASIL",
+    "ac_registration": "PT-XPM",
+    "acr": "XPM",
+    "ac_subtype": "321",
+    "rotation_code": "X",
+    "valid_from": "2026-05-14 07:55:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "321",
+    "rst": "321X",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "SCL",
+    "category": "CAT3",
+    "name": "PT-XPM [RNP][INT]",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "7",
+    "manufacturer": "AIRBUS",
+    "man_serial": "6949",
+    "engine": "CFM",
+    "engine_type": "CFM56-5B3/3",
+    "delivered": "2016-02-04 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 8,
+    "physical_y": 212,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: PT-XPM\nMLW: 89.000\nOXYGEN: 22\nRNP: ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nNEW PAINT: YES\nAUTHORIZED: AEP, EZE, LIM, MVD, PDP, SCL\nINTERCHANGE:YES",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-3",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM BRASIL",
+    "ac_registration": "PT-XPQ",
+    "acr": "XPQ",
+    "ac_subtype": "321",
+    "rotation_code": "X",
+    "valid_from": "2026-05-14 05:10:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "321",
+    "rst": "321X",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "GRU",
+    "category": "CAT3",
+    "name": "PT-XPQ [RNP][INT]",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "7",
+    "manufacturer": "AIRBUS",
+    "man_serial": "7081",
+    "engine": "CFM",
+    "engine_type": "CFM56-5B3/3",
+    "delivered": "2016-04-28 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 8,
+    "physical_y": 212,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: PT-XPQ\nMLW: 89.000\nOXYGEN: 22\nRNP: ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nSPACEFLEX:\nNEW PAINT: YES\nAUTHORIZED: AEP, COR, EZE, ROS, SCL",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-4",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM BRASIL",
+    "ac_registration": "PT-XPC",
+    "acr": "XPC",
+    "ac_subtype": "321",
+    "rotation_code": "X",
+    "valid_from": "2026-05-11 15:50:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "321",
+    "rst": "321X",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "SCL",
+    "category": "CAT3",
+    "name": "PT-XPC [RNP][INT]",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "7",
+    "manufacturer": "AIRBUS",
+    "man_serial": "6592",
+    "engine": "CFM",
+    "engine_type": "CFM56-5B3/3",
+    "delivered": "2015-05-07 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 8,
+    "physical_y": 212,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: PT-XPC\nOXYGEN: 22\nRNP:ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGAÇÃO: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nSPACEFLEX:NO\nNEW PAINT:YES\nAUTHORIZED:AEP,ASU,COR,EZE,LIM,MVD,ROS,SCL\nINTERCHANGE:YES",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-5",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM BRASIL",
+    "ac_registration": "PT-XPF",
+    "acr": "XPF",
+    "ac_subtype": "321",
+    "rotation_code": "X",
+    "valid_from": "2026-05-11 08:05:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "321",
+    "rst": "321X",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "SCL",
+    "category": "CAT3",
+    "name": "PT-XPF [RNP][INT]",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "7",
+    "manufacturer": "AIRBUS",
+    "man_serial": "6670",
+    "engine": "CFM",
+    "engine_type": "CFM56-5B3/3",
+    "delivered": "2015-07-09 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 8,
+    "physical_y": 212,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: PT-XPF\nOXYGEN: 22\nRNP: ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nSPACEFLEX: NO\nNEW PAINT: NO\nAUTHORIZED: AEP, ASU, COR, EZE, LIM, MVD, ROS, SCL.",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-6",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BAE",
+    "acr": "BAE",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-05-11 07:15:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "LIM",
+    "category": "",
+    "name": "CC-BAE TOBOGAN",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "4509",
+    "engine": "IAE",
+    "engine_type": "V2527-A5",
+    "delivered": "2010-11-26 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 168,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BAE\nMLW: 66.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-7",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM ECUADOR",
+    "ac_registration": "CC-CYJ",
+    "acr": "CYJ",
+    "ac_subtype": "319",
+    "rotation_code": "C",
+    "valid_from": "2026-05-11 05:50:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "319",
+    "rst": "319C",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "UIO",
+    "category": "",
+    "name": "CC-CYJ ($$$)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "3772",
+    "engine": "IAE",
+    "engine_type": "V2524-A5",
+    "delivered": "2009-01-27 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 144,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-CYJ\nMLW: 62.500\nMTOW: 70.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: V2524-A5 Basic\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-8",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM BRASIL",
+    "ac_registration": "PT-XPO",
+    "acr": "XPO",
+    "ac_subtype": "321",
+    "rotation_code": "X",
+    "valid_from": "2026-05-11 05:10:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "321",
+    "rst": "321X",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "GRU",
+    "category": "CAT3",
+    "name": "PT-XPO [RNP][INT]",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "7",
+    "manufacturer": "AIRBUS",
+    "man_serial": "7098",
+    "engine": "CFM",
+    "engine_type": "CFM56-5B3/3",
+    "delivered": "2016-05-18 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 8,
+    "physical_y": 212,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: PT-XPO\nOXY: 22\nRNP:ONLY GENERIC RNP-AR\nPZ:NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET:YES\nSPACEFLEX: NO/ SMARTLAV: YES\nNEW PAINT:YES\nAUTHORIZED AEP,ASU,EZE,LIM,MVD,PDP,SCL\nINTERCHANGE:YES",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-9",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM BRASIL",
+    "ac_registration": "PT-XPI",
+    "acr": "XPI",
+    "ac_subtype": "321",
+    "rotation_code": "X",
+    "valid_from": "2026-05-10 08:05:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "321",
+    "rst": "321X",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "SCL",
+    "category": "CAT3",
+    "name": "PT-XPI [RNP][INT]",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "7",
+    "manufacturer": "AIRBUS",
+    "man_serial": "6729",
+    "engine": "CFM",
+    "engine_type": "CFM56-5B3/3",
+    "delivered": "2015-08-11 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 8,
+    "physical_y": 212,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: PT-XPI\nOXY: 22\nRNP:ONLY GENERIC RNP-AR\nLIP:NO\nPZ:NO\nFUMIGATION: YES\nMOTORIZAÇÃO: CFM56-5B3\nSHARKLET:YES\nSPACEFLEX:NO\nNEW PAINT:YES\nAUTHORIZED:AEP,ASU,COR, EZE,LIM,MVD,ROS,SCL\nINTERCHANGE:YES",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-10",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM PERU",
+    "ac_registration": "CC-CPI",
+    "acr": "CPI",
+    "ac_subtype": "319",
+    "rotation_code": "C",
+    "valid_from": "2026-05-07 05:45:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "319",
+    "rst": "319C",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "LIM",
+    "category": "CAT3",
+    "name": "CC-CPI ($$$)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "2585",
+    "engine": "IAE",
+    "engine_type": "V2524-A5",
+    "delivered": "2005-10-25 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 144,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-CPI\nMLW: 62.500\nMTOW: 70.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: V2524-A5 Basic\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-11",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-COQ",
+    "acr": "COQ",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-05-06 08:55:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "BOG",
+    "category": "CAT3",
+    "name": "CC-COQ ($$$)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "1877",
+    "engine": "IAE",
+    "engine_type": "V2527E-A5",
+    "delivered": "2002-11-08 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 168,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-COQ\nMLW: 64.500\nMTOW: 73.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE:\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-12",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BAJ",
+    "acr": "BAJ",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-05-06 08:00:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "SCL",
+    "category": "",
+    "name": "CC-BAJ ($)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "4576",
+    "engine": "IAE",
+    "engine_type": "V2527-A5",
+    "delivered": "2011-02-12 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 168,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BAJ\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-13",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BAA",
+    "acr": "BAA",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-05-05 07:50:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "LIM",
+    "category": "",
+    "name": "CC-BAA ($)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "4383",
+    "engine": "IAE",
+    "engine_type": "V2527E-A5",
+    "delivered": "2010-07-26 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 168,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BAA\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527E-A5 Select One\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-14",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM BRASIL",
+    "ac_registration": "PR-TYM",
+    "acr": "TYM",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-05-05 07:10:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "SCL",
+    "category": "",
+    "name": "PR-TYM [RNP][INT]",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "6561",
+    "engine": "CFM",
+    "engine_type": "CFM56-5B4/3",
+    "delivered": "2019-07-17 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 8,
+    "physical_y": 168,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "A/C:PR-TYM\nMTOW:78000\nMLW:66.000\nOXY:22\nRNP:ONLY GENERIC RNP-AR\nLIP:NO\nPZ:NO\nFUMIGATION:YES\nENGINE:CFM56-5B4/3\nSHARKLET:YES\nAUTHORIZED: AEP,BOG,BRC,COR,EZE,LIM,MDZ,MVD,PDP,SCL\nADS-B:NO\nINTERCHANGE:YES",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-15",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BGM",
+    "acr": "BGM",
+    "ac_subtype": "789",
+    "rotation_code": "N",
+    "valid_from": "2026-05-01 15:00:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "787",
+    "rst": "789N",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "SCL",
+    "category": "CAT3",
+    "name": "CC-BGM",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "9",
+    "manufacturer": "BOEING",
+    "man_serial": "38771",
+    "engine": "ROLLS-ROYCE",
+    "engine_type": "TRENT 1000-J",
+    "delivered": "2017-01-26 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 30,
+    "physical_w": 0,
+    "physical_y": 274,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BGM\nMLW: 192.776\nOXYGEN: 22\nRNP: NO\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: Trent 1000 J\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-16",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM BRASIL",
+    "ac_registration": "PT-XPN",
+    "acr": "XPN",
+    "ac_subtype": "321",
+    "rotation_code": "X",
+    "valid_from": "2026-05-01 08:20:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "321",
+    "rst": "321X",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "GRU",
+    "category": "CAT3",
+    "name": "PT-XPN [RNP][INT]",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "7",
+    "manufacturer": "AIRBUS",
+    "man_serial": "7005",
+    "engine": "CFM",
+    "engine_type": "CFM56-5B3/3",
+    "delivered": "2016-02-29 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 8,
+    "physical_y": 212,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: PT-XPN\nMLW: 89.000\nOXYGEN: 22\nRNP: ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nSPACEFLEX:\nNEW PAINT: YES\nAUTHORIZED: AEP, COR, EZE, LIM, ROS, SCL, MVD",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-17",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BMB",
+    "acr": "BMB",
+    "ac_subtype": "789",
+    "rotation_code": "N",
+    "valid_from": "2026-04-30 00:15:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "787",
+    "rst": "789N",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "GRU",
+    "category": "CAT3",
+    "name": "CC-BMB OFAR",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "9",
+    "manufacturer": "BOEING",
+    "man_serial": "65100",
+    "engine": "GENERAL ELECTRI",
+    "engine_type": "GEnx-1B",
+    "delivered": "2015-08-10 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 30,
+    "physical_w": 0,
+    "physical_y": 270,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BMB\nMLW: 192.776\nOXYGEN: 22\nRNP: NO\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: GEnx-1B\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-18",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BGG",
+    "acr": "BGG",
+    "ac_subtype": "789",
+    "rotation_code": "N",
+    "valid_from": "2026-04-29 18:35:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "787",
+    "rst": "789N",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "SCL",
+    "category": "CAT3",
+    "name": "CC-BGG",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "9",
+    "manufacturer": "BOEING",
+    "man_serial": "38461",
+    "engine": "ROLLS-ROYCE",
+    "engine_type": "TRENT 1000-J",
+    "delivered": "2015-12-17 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 30,
+    "physical_w": 0,
+    "physical_y": 274,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BGG\nMLW: 192.776\nOXYGEN: 22\nRNP: NO\nLIP:\nPZ: NO\nFUMIGATION:\nENGINE:\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-19",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BAK",
+    "acr": "BAK",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-04-29 07:10:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "SCL",
+    "category": "CAT3",
+    "name": "CC-BAK ($$$)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "4597",
+    "engine": "IAE",
+    "engine_type": "V2527-A5",
+    "delivered": "2011-02-16 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 168,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BAK\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-20",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-COX",
+    "acr": "COX",
+    "ac_subtype": "319",
+    "rotation_code": "C",
+    "valid_from": "2026-04-28 05:50:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "319",
+    "rst": "319C",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "LIM",
+    "category": "CAT3",
+    "name": "CC-COX ($$$)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "2096",
+    "engine": "IAE",
+    "engine_type": "V2524-A5",
+    "delivered": "2003-12-17 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 144,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-COX\nMLW: 62.500\nMTOW: 70.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: V2524-A5 Basic\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-21",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BAH",
+    "acr": "BAH",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-04-27 10:55:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "SCL",
+    "category": "",
+    "name": "CC-BAH ($$$)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "4549",
+    "engine": "IAE",
+    "engine_type": "V2527-A5",
+    "delivered": "2010-12-25 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 180,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BAH\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-22",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BLJ",
+    "acr": "BLJ",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-04-27 09:45:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "BOG",
+    "category": "CAT3",
+    "name": "CC-BLJ TOBOGAN",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "8786",
+    "engine": "CFM",
+    "engine_type": "CFM56-5B4/3",
+    "delivered": "2011-09-20 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 12,
+    "physical_y": 162,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BLJ\nMLW: 66.000\nMTOW: 73.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: CFM56-5B4 Sharklet.\nSHARKLET: YES\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER: EX VIVAAIR",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-23",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BAF",
+    "acr": "BAF",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-04-27 08:00:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "LIM",
+    "category": "",
+    "name": "CC-BAF ($$)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "4516",
+    "engine": "IAE",
+    "engine_type": "V2527-A5",
+    "delivered": "2010-11-27 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 168,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BAF\nMLW: 66.000\nMTOW: 73.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-25",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BAD",
+    "acr": "BAD",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-04-25 20:30:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "BOG",
+    "category": "",
+    "name": "CC-BAD TOBOGAN",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "4476",
+    "engine": "IAE",
+    "engine_type": "V2527E-A5",
+    "delivered": "2010-10-22 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 180,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BAD\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527E-A5 Select One\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-26",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BAG",
+    "acr": "BAG",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-04-25 15:15:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "LIM",
+    "category": "",
+    "name": "CC-BAG ($)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "4546",
+    "engine": "IAE",
+    "engine_type": "V2527-A5",
+    "delivered": "2010-12-25 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 168,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BAG\nMLW: 66.000\nMTOW: 73.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-27",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BAI",
+    "acr": "BAI",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-04-23 09:55:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "BOG",
+    "category": "CAT3",
+    "name": "CC-BAI ($$)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "4543",
+    "engine": "IAE",
+    "engine_type": "V2527E-A5",
+    "delivered": "2011-01-18 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 174,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BAI\nMLW: 66.000\nMTOW: 73.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE:\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-28",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BFO",
+    "acr": "BFO",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-04-21 07:15:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "LIM",
+    "category": "CAT3",
+    "name": "CC-BFO ($$$)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "5686",
+    "engine": "CFM",
+    "engine_type": "CFM56-5B4/3",
+    "delivered": "2013-07-11 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 180,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BFO\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: CFM56-5B4 Sharklets\nSHARKLET: YES\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-29",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM CHILE",
+    "ac_registration": "CC-BHE",
+    "acr": "BHE",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-04-06 10:00:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "SRZ",
+    "category": "CAT3",
+    "name": "CC-BHE",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "8172",
+    "engine": "PRATT & WHITNEY",
+    "engine_type": "PW1127GA-JM",
+    "delivered": "2019-12-02 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 180,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-BHE\nMLW: 67.400\nMTOW: 79.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: PW1127GA (Alternate Climb)\nSHARKLET: YES\nSPACEFLEX: YES\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-30",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM ECUADOR",
+    "ac_registration": "CC-COU",
+    "acr": "COU",
+    "ac_subtype": "319",
+    "rotation_code": "C",
+    "valid_from": "1970-01-01 00:00:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "319",
+    "rst": "319C",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "UIO",
+    "category": "CAT3",
+    "name": "CC-COU",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "2089",
+    "engine": "IAE",
+    "engine_type": "V2524-A5",
+    "delivered": "2003-12-11 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 144,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: CC-COU\nMLW: 62.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: V2524-A5 Basic\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-31",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM ECUADOR",
+    "ac_registration": "HC-CPX",
+    "acr": "CPX",
+    "ac_subtype": "319",
+    "rotation_code": "C",
+    "valid_from": "1970-01-01 00:00:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "319",
+    "rst": "319C",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "UIO",
+    "category": "CAT3",
+    "name": "HC-CPX ($)",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "3658",
+    "engine": "IAE",
+    "engine_type": "V2524-A5",
+    "delivered": "2008-10-30 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 144,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: HC-CPX\nMLW: 62.500\nMTOW: 70.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: V2524-A5 Basic\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
+    "status": "pending",
+    "createdAt": "2026-05-18T17:02:41.423Z",
     "checks": {
       "ifn": {
         "checked": false

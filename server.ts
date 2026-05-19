@@ -115,6 +115,13 @@ app.patch('/api/notifications/:id/read', (req, res) => {
   }
 });
 
+app.post('/api/reference-data', (req, res) => {
+  const data = readData();
+  data.referenceData = req.body.referenceData;
+  writeData(data);
+  res.json({ success: true, count: data.referenceData.length });
+});
+
 async function startServer() {
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({

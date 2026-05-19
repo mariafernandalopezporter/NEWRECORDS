@@ -16,20 +16,16 @@ interface AircraftDetailProps {
 
 const SYSTEM_GROUPS: { name: string; areas: (keyof AircraftChecks)[] }[] = [
   { 
-    name: 'Gestión', 
-    areas: ['jira_ticket', 'diccionario'] 
+    name: 'Level 1: Gestión Crítica', 
+    areas: ['jira_ticket', 'ifn', 'jta', 'diccionario'] 
   },
   { 
-    name: 'OPS', 
-    areas: ['ifn', 'jta', 'limops', 'aircom', 'sicco', 'ops_flt', 'videowall'] 
+    name: 'Level 2: Integración Sistemas', 
+    areas: ['videowall', 'sicco', 'despacho', 'crew'] 
   },
   { 
-    name: 'Dispatch', 
-    areas: ['despacho'] 
-  },
-  { 
-    name: 'Crew', 
-    areas: ['crew'] 
+    name: 'Sistemas Complementarios', 
+    areas: ['limops', 'aircom', 'ops_flt', 'mantenedor'] 
   }
 ];
 
@@ -74,10 +70,13 @@ export const AircraftDetail = ({ aircraft, onBack, onCheck, onEdit, onDelete, us
     setShowJiraModal(false);
   };
 
+  const l1Areas = ['jira_ticket', 'ifn', 'jta', 'diccionario'];
+  const isL1Complete = l1Areas.every(id => aircraft.checks[id as keyof AircraftChecks]?.checked);
+
   // Filter groups to only show systems with at least one active area in this activation type
   const activeGroups = SYSTEM_GROUPS.map(group => {
     const relevantAreas = isChangeActivation 
-      ? group.areas.filter(id => ['ifn', 'jta', 'diccionario', 'jira_ticket'].includes(id))
+      ? group.areas.filter(id => l1Areas.includes(id))
       : group.areas;
     
     if (relevantAreas.length === 0) return null;
@@ -93,7 +92,7 @@ export const AircraftDetail = ({ aircraft, onBack, onCheck, onEdit, onDelete, us
   );
 
   return (
-    <div className="space-y-8 pb-20 max-w-7xl mx-auto px-4 sm:px-6">
+    <div className="space-y-8 pb-20 max-w-7xl mx-auto px-4 sm:px-6 text-latam-navy">
       {/* Navigation and Top Bar */}
       <div className="flex items-center justify-between">
         <button 
@@ -161,6 +160,14 @@ export const AircraftDetail = ({ aircraft, onBack, onCheck, onEdit, onDelete, us
         <div className="lg:col-span-12">
           {/* Status/Checklist Card */}
           <div className="bg-white rounded-3xl border border-slate-100 shadow-xl shadow-slate-200/50 overflow-hidden mb-10">
+            {!isL1Complete && !isChangeActivation && (
+              <div className="bg-amber-50 border-b border-amber-100 p-3 flex items-center justify-center gap-2">
+                <AlertCircle size={14} className="text-amber-600" />
+                <span className="text-[9px] font-black uppercase tracking-widest text-amber-900">
+                  ⚠️ Atención: Complete los procesos de Level 1 para habilitar Level 2 y Complementarios
+                </span>
+              </div>
+            )}
             <div className="p-8 border-b border-slate-50 flex items-center justify-between bg-slate-50/30">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 bg-latam-magenta text-white rounded-xl shadow-lg shadow-latam-magenta/20 flex items-center justify-center">
@@ -177,41 +184,52 @@ export const AircraftDetail = ({ aircraft, onBack, onCheck, onEdit, onDelete, us
               </div>
             </div>
 
-            <div className="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-10">
-              {activeGroups.map((group, idx) => (
-                <div key={idx} className="space-y-4 group">
-                  <div className="flex justify-between items-end">
-                    <span className="text-[11px] font-black uppercase tracking-[0.15em] text-slate-500 group-hover:text-latam-navy transition-colors">{group.name}</span>
-                    <span className="text-sm font-black text-latam-navy">{group.progress}%</span>
-                  </div>
-                  <div className="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-emerald-500 transition-all duration-1000 ease-out" 
-                      style={{ width: `${group.progress}%` }} 
-                    />
-                  </div>
-                  
-                  {/* Sub-areas list under each system */}
-                  <div className="grid grid-cols-1 gap-2 pt-2">
-                    {group.areas.map(areaId => (
-                      <AreaCheckCard 
-                        key={areaId}
-                        label={AREA_LABELS[areaId]}
-                        checked={!!aircraft.checks[areaId]?.checked}
-                        timestamp={aircraft.checks[areaId]?.timestamp}
-                        user={aircraft.checks[areaId]?.user}
-                        value={aircraft.checks[areaId]?.value}
-                        isAllowed={AREA_PERMISSIONS[areaId].some(email => email.toLowerCase() === userEmail.toLowerCase())}
-                        onCheck={() => {
-                          if (areaId === 'jira_ticket' || !aircraft.checks[areaId]?.checked) {
-                            handleAreaCheck(areaId);
-                          }
-                        }}
+            <div className="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
+              {activeGroups.map((group, idx) => {
+                const isLocked = !isL1Complete && group.name.includes('Level 2') || group.name.includes('Adicionales') || group.name.includes('Sistemas Complementarios');
+                
+                return (
+                  <div key={idx} className={cn("space-y-4 group", isLocked && "opacity-60")}>
+                    <div className="flex justify-between items-end">
+                      <div className="flex items-center gap-2">
+                        <span className="text-[11px] font-black uppercase tracking-[0.15em] text-slate-500 group-hover:text-latam-navy transition-colors">{group.name}</span>
+                        {isLocked && <Lock size={12} className="text-slate-300" />}
+                      </div>
+                      <span className="text-sm font-black text-latam-navy">{group.progress}%</span>
+                    </div>
+                    <div className="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-emerald-500 transition-all duration-1000 ease-out" 
+                        style={{ width: `${group.progress}%` }} 
                       />
-                    ))}
+                    </div>
+                    
+                    {/* Sub-areas list under each system */}
+                    <div className="grid grid-cols-1 gap-2 pt-2">
+                      {group.areas.map(areaId => (
+                        <AreaCheckCard 
+                          key={areaId}
+                          label={AREA_LABELS[areaId]}
+                          checked={!!aircraft.checks[areaId]?.checked}
+                          timestamp={aircraft.checks[areaId]?.timestamp}
+                          user={aircraft.checks[areaId]?.user}
+                          value={aircraft.checks[areaId]?.value}
+                          isAllowed={AREA_PERMISSIONS[areaId].some(email => email.toLowerCase() === userEmail.toLowerCase()) && (!isLocked || aircraft.checks[areaId]?.checked)}
+                          onCheck={() => {
+                            if (isLocked && !aircraft.checks[areaId]?.checked) {
+                              alert("Please complete Level 1 checks first.");
+                              return;
+                            }
+                            if (areaId === 'jira_ticket' || !aircraft.checks[areaId]?.checked) {
+                              handleAreaCheck(areaId);
+                            }
+                          }}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
             
             <div className="p-4 bg-slate-50 flex justify-center border-t border-slate-100">

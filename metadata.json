@@ -2,5 +2,5 @@
   "name": "OPS NEWAC&Changes",
   "description": "Gestión de Matrículas de Aeronaves con checklist por áreas y notificaciones automáticas.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

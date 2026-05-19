@@ -1,19 +1,22 @@
 import React from 'react';
-import { Search, Filter, Download, Plane, ChevronRight, FileText, Pencil, Trash2 } from 'lucide-react';
+import { Search, Filter, Download, Upload, Plane, ChevronRight, FileText, Pencil, Trash2 } from 'lucide-react';
 import { Aircraft } from '../types';
 import { StatusBadge } from './Dashboard';
 import { cn } from '../lib/utils';
+import { dataService } from '../services/dataService';
 
 interface AircraftsListProps {
   aircrafts: Aircraft[];
   onViewAircraft: (id: string) => void;
   onEditAircraft: (id: string) => void;
   onDeleteAircraft: (id: string) => void;
+  onDataImported?: () => void;
 }
 
-export const AircraftsList = ({ aircrafts, onViewAircraft, onEditAircraft, onDeleteAircraft }: AircraftsListProps) => {
+export const AircraftsList = ({ aircrafts, onViewAircraft, onEditAircraft, onDeleteAircraft, onDataImported }: AircraftsListProps) => {
   const [searchTerm, setSearchTerm] = React.useState('');
   const [filter, setFilter] = React.useState<Aircraft['status'] | 'all'>('all');
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   const filteredAircrafts = aircrafts.filter(ac => {
     const matchesSearch = ac.ac_registration.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -37,17 +40,50 @@ export const AircraftsList = ({ aircrafts, onViewAircraft, onEditAircraft, onDel
     link.click();
   };
 
+  const handleImportClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = async (event) => {
+        const text = event.target?.result as string;
+        await dataService.importFromCSV(text);
+        if (onDataImported) onDataImported();
+      };
+      reader.readAsText(file);
+    }
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 className="text-2xl font-bold font-display uppercase tracking-tight">AIRCRAFT REGISTRATIONS</h1>
-        <button 
-          onClick={exportToCSV}
-          className="btn-magenta flex items-center gap-2"
-        >
-          <Download size={16} />
-          <span>Exportar CSV</span>
-        </button>
+        <div className="flex gap-2">
+          <input 
+            type="file" 
+            ref={fileInputRef} 
+            onChange={handleFileChange} 
+            className="hidden" 
+            accept=".csv"
+          />
+          <button 
+            onClick={handleImportClick}
+            className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 font-bold text-xs flex items-center gap-2 transition-colors border border-slate-200"
+          >
+            <Upload size={16} />
+            <span>Importar CSV</span>
+          </button>
+          <button 
+            onClick={exportToCSV}
+            className="btn-magenta flex items-center gap-2"
+          >
+            <Download size={16} />
+            <span>Exportar</span>
+          </button>
+        </div>
       </div>
 
       <div className="card-latam">

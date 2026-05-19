@@ -161,6 +161,7 @@ export default function App() {
           onViewAircraft={handleViewAircraft} 
           onEditAircraft={handleOpenEdit}
           onDeleteAircraft={handleDeleteAircraft}
+          onDataImported={loadData}
         />;
       case 'new_aircraft':
         return <AircraftForm 
