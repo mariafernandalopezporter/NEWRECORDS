@@ -1,9 +1,10 @@
 import React from 'react';
-import { Search, Filter, Download, Upload, Plane, ChevronRight, FileText, Pencil, Trash2 } from 'lucide-react';
+import { Search, Filter, Download, Upload, Plane, ChevronRight, FileText, Pencil, Trash2, X, AlertCircle } from 'lucide-react';
 import { Aircraft } from '../types';
 import { StatusBadge } from './Dashboard';
 import { cn } from '../lib/utils';
 import { dataService } from '../services/dataService';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface AircraftsListProps {
   aircrafts: Aircraft[];
@@ -44,14 +45,19 @@ export const AircraftsList = ({ aircrafts, onViewAircraft, onEditAircraft, onDel
     fileInputRef.current?.click();
   };
 
+  const [isImporting, setIsImporting] = React.useState(false);
+
   const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
       reader.onload = async (event) => {
         const text = event.target?.result as string;
+        setIsImporting(true);
         await dataService.importFromCSV(text);
         if (onDataImported) onDataImported();
+        setIsImporting(false);
+        alert("Archivo importado con éxito.");
       };
       reader.readAsText(file);
     }
@@ -62,21 +68,8 @@ export const AircraftsList = ({ aircrafts, onViewAircraft, onEditAircraft, onDel
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <h1 className="text-2xl font-bold font-display uppercase tracking-tight">AIRCRAFT REGISTRATIONS</h1>
         <div className="flex gap-2">
-          <input 
-            type="file" 
-            ref={fileInputRef} 
-            onChange={handleFileChange} 
-            className="hidden" 
-            accept=".csv"
-          />
           <button 
-            onClick={handleImportClick}
-            className="px-4 py-2 bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 font-bold text-xs flex items-center gap-2 transition-colors border border-slate-200"
-          >
-            <Upload size={16} />
-            <span>Importar CSV</span>
-          </button>
-          <button 
+            disabled={isImporting}
             onClick={exportToCSV}
             className="btn-magenta flex items-center gap-2"
           >
@@ -85,6 +78,8 @@ export const AircraftsList = ({ aircrafts, onViewAircraft, onEditAircraft, onDel
           </button>
         </div>
       </div>
+      
+      {/* Search and Table remains similar... */}
 
       <div className="card-latam">
         <div className="p-4 border-b bg-slate-50 flex flex-col md:flex-row gap-4 items-center">

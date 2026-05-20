@@ -70,8 +70,16 @@ export const AircraftDetail = ({ aircraft, onBack, onCheck, onEdit, onDelete, us
     setShowJiraModal(false);
   };
 
-  const l1Areas = ['jira_ticket', 'ifn', 'jta', 'diccionario'];
-  const isL1Complete = l1Areas.every(id => aircraft.checks[id as keyof AircraftChecks]?.checked);
+  const l1Areas: (keyof AircraftChecks)[] = ['jira_ticket', 'ifn', 'jta', 'diccionario'];
+  const isL1Complete = l1Areas.every(id => aircraft.checks[id]?.checked);
+
+  // Helper to check if previous area in sequence is checked
+  const isPreviousChecked = (areaId: keyof AircraftChecks) => {
+    const idx = l1Areas.indexOf(areaId);
+    if (idx <= 0) return true; // Jira is first, or not in L1
+    const prevAreaId = l1Areas[idx - 1];
+    return !!aircraft.checks[prevAreaId]?.checked;
+  };
 
   // Filter groups to only show systems with at least one active area in this activation type
   const activeGroups = SYSTEM_GROUPS.map(group => {
@@ -206,26 +214,36 @@ export const AircraftDetail = ({ aircraft, onBack, onCheck, onEdit, onDelete, us
                     
                     {/* Sub-areas list under each system */}
                     <div className="grid grid-cols-1 gap-2 pt-2">
-                      {group.areas.map(areaId => (
-                        <AreaCheckCard 
-                          key={areaId}
-                          label={AREA_LABELS[areaId]}
-                          checked={!!aircraft.checks[areaId]?.checked}
-                          timestamp={aircraft.checks[areaId]?.timestamp}
-                          user={aircraft.checks[areaId]?.user}
-                          value={aircraft.checks[areaId]?.value}
-                          isAllowed={AREA_PERMISSIONS[areaId].some(email => email.toLowerCase() === userEmail.toLowerCase()) && (!isLocked || aircraft.checks[areaId]?.checked)}
-                          onCheck={() => {
-                            if (isLocked && !aircraft.checks[areaId]?.checked) {
-                              alert("Please complete Level 1 checks first.");
-                              return;
-                            }
-                            if (areaId === 'jira_ticket' || !aircraft.checks[areaId]?.checked) {
-                              handleAreaCheck(areaId);
-                            }
-                          }}
-                        />
-                      ))}
+                      {group.areas.map(areaId => {
+                        const isL1Area = l1Areas.includes(areaId);
+                        const isSequenceLocked = isL1Area && !isPreviousChecked(areaId);
+                        const finalLocked = isLocked || isSequenceLocked;
+
+                        return (
+                          <AreaCheckCard 
+                            key={areaId}
+                            label={AREA_LABELS[areaId]}
+                            checked={!!aircraft.checks[areaId]?.checked}
+                            timestamp={aircraft.checks[areaId]?.timestamp}
+                            user={aircraft.checks[areaId]?.user}
+                            value={aircraft.checks[areaId]?.value}
+                            isAllowed={AREA_PERMISSIONS[areaId].some(email => email.toLowerCase() === userEmail.toLowerCase()) && (!finalLocked || aircraft.checks[areaId]?.checked)}
+                            onCheck={() => {
+                              if (finalLocked && !aircraft.checks[areaId]?.checked) {
+                                if (isSequenceLocked) {
+                                  alert(`Please complete the checks in order: ${l1Areas.join(' -> ').toUpperCase().replace(/_/g, ' ')}`);
+                                } else {
+                                  alert("Please complete Level 1 checks first (Jira, IFN, JTA, Diccionario).");
+                                }
+                                return;
+                              }
+                              if (areaId === 'jira_ticket' || !aircraft.checks[areaId]?.checked) {
+                                handleAreaCheck(areaId);
+                              }
+                            }}
+                          />
+                        );
+                      })}
                     </div>
                   </div>
                 );

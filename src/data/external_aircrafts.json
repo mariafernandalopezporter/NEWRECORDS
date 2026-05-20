@@ -44,7 +44,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: PT-XPJ\nMLW: 89.000\nOXYGEN: 22\nRNP:ONLY GENERIC RNP-AR\nLIP:NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3/3\nSHARKLET: YES\nNEW PAINT: NO\nAUTHORIZED: AEP, COR, EZE, LIM, ROS, SCL\nINTERCHANGE:YES",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.422Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -129,7 +129,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BAM\nMLW: 66.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.422Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -214,7 +214,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: PT-XPM\nMLW: 89.000\nOXYGEN: 22\nRNP: ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nNEW PAINT: YES\nAUTHORIZED: AEP, EZE, LIM, MVD, PDP, SCL\nINTERCHANGE:YES",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -299,7 +299,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: PT-XPQ\nMLW: 89.000\nOXYGEN: 22\nRNP: ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nSPACEFLEX:\nNEW PAINT: YES\nAUTHORIZED: AEP, COR, EZE, ROS, SCL",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -384,7 +384,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: PT-XPC\nOXYGEN: 22\nRNP:ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGAÇÃO: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nSPACEFLEX:NO\nNEW PAINT:YES\nAUTHORIZED:AEP,ASU,COR,EZE,LIM,MVD,ROS,SCL\nINTERCHANGE:YES",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -469,7 +469,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: PT-XPF\nOXYGEN: 22\nRNP: ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nSPACEFLEX: NO\nNEW PAINT: NO\nAUTHORIZED: AEP, ASU, COR, EZE, LIM, MVD, ROS, SCL.",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -554,7 +554,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BAE\nMLW: 66.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -639,7 +639,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-CYJ\nMLW: 62.500\nMTOW: 70.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: V2524-A5 Basic\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -724,7 +724,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: PT-XPO\nOXY: 22\nRNP:ONLY GENERIC RNP-AR\nPZ:NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET:YES\nSPACEFLEX: NO/ SMARTLAV: YES\nNEW PAINT:YES\nAUTHORIZED AEP,ASU,EZE,LIM,MVD,PDP,SCL\nINTERCHANGE:YES",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -809,7 +809,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: PT-XPI\nOXY: 22\nRNP:ONLY GENERIC RNP-AR\nLIP:NO\nPZ:NO\nFUMIGATION: YES\nMOTORIZAÇÃO: CFM56-5B3\nSHARKLET:YES\nSPACEFLEX:NO\nNEW PAINT:YES\nAUTHORIZED:AEP,ASU,COR, EZE,LIM,MVD,ROS,SCL\nINTERCHANGE:YES",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -894,7 +894,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-CPI\nMLW: 62.500\nMTOW: 70.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: V2524-A5 Basic\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -979,7 +979,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-COQ\nMLW: 64.500\nMTOW: 73.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE:\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -1064,7 +1064,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BAJ\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -1149,7 +1149,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BAA\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527E-A5 Select One\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -1234,7 +1234,7 @@
     "cockpit_jump_seat": "",
     "remarks": "A/C:PR-TYM\nMTOW:78000\nMLW:66.000\nOXY:22\nRNP:ONLY GENERIC RNP-AR\nLIP:NO\nPZ:NO\nFUMIGATION:YES\nENGINE:CFM56-5B4/3\nSHARKLET:YES\nAUTHORIZED: AEP,BOG,BRC,COR,EZE,LIM,MDZ,MVD,PDP,SCL\nADS-B:NO\nINTERCHANGE:YES",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -1319,7 +1319,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BGM\nMLW: 192.776\nOXYGEN: 22\nRNP: NO\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: Trent 1000 J\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -1404,7 +1404,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: PT-XPN\nMLW: 89.000\nOXYGEN: 22\nRNP: ONLY GENERIC RNP-AR\nLIP: NO\nPZ: NO\nFUMIGATION: YES\nENGINE: CFM56-5B3\nSHARKLET: YES\nSPACEFLEX:\nNEW PAINT: YES\nAUTHORIZED: AEP, COR, EZE, LIM, ROS, SCL, MVD",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -1489,7 +1489,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BMB\nMLW: 192.776\nOXYGEN: 22\nRNP: NO\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: GEnx-1B\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -1574,7 +1574,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BGG\nMLW: 192.776\nOXYGEN: 22\nRNP: NO\nLIP:\nPZ: NO\nFUMIGATION:\nENGINE:\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -1659,7 +1659,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BAK\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -1744,7 +1744,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-COX\nMLW: 62.500\nMTOW: 70.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: V2524-A5 Basic\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -1829,7 +1829,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BAH\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -1914,7 +1914,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BLJ\nMLW: 66.000\nMTOW: 73.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: CFM56-5B4 Sharklet.\nSHARKLET: YES\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER: EX VIVAAIR",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.621Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -1999,7 +1999,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BAF\nMLW: 66.000\nMTOW: 73.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.622Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -2040,7 +2040,7 @@
     }
   },
   {
-    "id": "ccv-25",
+    "id": "ccv-24",
     "activation_type": "new_registry",
     "ac_owner": "LATAM CHILE",
     "ac_registration": "CC-BAD",
@@ -2084,7 +2084,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BAD\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527E-A5 Select One\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.622Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -2125,7 +2125,7 @@
     }
   },
   {
-    "id": "ccv-26",
+    "id": "ccv-25",
     "activation_type": "new_registry",
     "ac_owner": "LATAM CHILE",
     "ac_registration": "CC-BAG",
@@ -2169,7 +2169,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BAG\nMLW: 66.000\nMTOW: 73.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: YES\nFUMIGATION:\nENGINE: V2527-A5-FADEC SCN 18 SelectOne\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.622Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -2210,7 +2210,7 @@
     }
   },
   {
-    "id": "ccv-27",
+    "id": "ccv-26",
     "activation_type": "new_registry",
     "ac_owner": "LATAM CHILE",
     "ac_registration": "CC-BAI",
@@ -2254,7 +2254,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BAI\nMLW: 66.000\nMTOW: 73.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE:\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.622Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -2295,7 +2295,7 @@
     }
   },
   {
-    "id": "ccv-28",
+    "id": "ccv-27",
     "activation_type": "new_registry",
     "ac_owner": "LATAM CHILE",
     "ac_registration": "CC-BFO",
@@ -2339,7 +2339,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BFO\nMLW: 66.000\nMTOW: 77.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: CFM56-5B4 Sharklets\nSHARKLET: YES\nSPACEFLEX: NO\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.622Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -2380,7 +2380,7 @@
     }
   },
   {
-    "id": "ccv-29",
+    "id": "ccv-28",
     "activation_type": "new_registry",
     "ac_owner": "LATAM CHILE",
     "ac_registration": "CC-BHE",
@@ -2424,7 +2424,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-BHE\nMLW: 67.400\nMTOW: 79.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: PW1127GA (Alternate Climb)\nSHARKLET: YES\nSPACEFLEX: YES\nNEW PAINT: YES\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.622Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -2465,7 +2465,7 @@
     }
   },
   {
-    "id": "ccv-30",
+    "id": "ccv-29",
     "activation_type": "new_registry",
     "ac_owner": "LATAM ECUADOR",
     "ac_registration": "CC-COU",
@@ -2509,7 +2509,7 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: CC-COU\nMLW: 62.500\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: V2524-A5 Basic\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.622Z",
     "checks": {
       "ifn": {
         "checked": false
@@ -2550,7 +2550,7 @@
     }
   },
   {
-    "id": "ccv-31",
+    "id": "ccv-30",
     "activation_type": "new_registry",
     "ac_owner": "LATAM ECUADOR",
     "ac_registration": "HC-CPX",
@@ -2594,7 +2594,92 @@
     "cockpit_jump_seat": "",
     "remarks": "AIRCRAFT: HC-CPX\nMLW: 62.500\nMTOW: 70.000\nOXYGEN: 22\nRNP: YES\nLIP: NO\nPZ: NO\nFUMIGATION:\nENGINE: V2524-A5 Basic\nSHARKLET: NO\nSPACEFLEX: NO\nNEW PAINT: NO\nADS B OUT:\nOTHER:",
     "status": "pending",
-    "createdAt": "2026-05-18T17:02:41.423Z",
+    "createdAt": "2026-05-19T17:19:17.622Z",
+    "checks": {
+      "ifn": {
+        "checked": false
+      },
+      "limops": {
+        "checked": false
+      },
+      "jta": {
+        "checked": false
+      },
+      "aircom": {
+        "checked": false
+      },
+      "sicco": {
+        "checked": false
+      },
+      "ops_flt": {
+        "checked": false
+      },
+      "despacho": {
+        "checked": false
+      },
+      "mantenedor": {
+        "checked": false
+      },
+      "videowall": {
+        "checked": false
+      },
+      "crew": {
+        "checked": false
+      },
+      "diccionario": {
+        "checked": false
+      },
+      "jira_ticket": {
+        "checked": false
+      }
+    }
+  },
+  {
+    "id": "ccv-31",
+    "activation_type": "new_registry",
+    "ac_owner": "LATAM BRASIL",
+    "ac_registration": "PS-LHM",
+    "acr": "LHM",
+    "ac_subtype": "320",
+    "rotation_code": "L",
+    "valid_from": "2026-05-15 08:00:00.000",
+    "valid_to": "2051-12-31 23:59:00.000",
+    "ac_type": "320",
+    "rst": "320L",
+    "local_type": "",
+    "local_subtype": "",
+    "icao_subtype": "",
+    "base_airport": "GRU",
+    "category": "CAT3",
+    "name": "PS-LHM",
+    "active": "TRUE",
+    "etops": "",
+    "flight_range": "",
+    "rff": "6",
+    "manufacturer": "AIRBUS",
+    "man_serial": "1234",
+    "engine": "PRATT & WHITNEY",
+    "engine_type": "PW1127GA-JM",
+    "delivered": "2024-01-01 00:00:00.000",
+    "selcal": "",
+    "perf_index": "0",
+    "max_dow": "",
+    "max_zfw": "",
+    "max_rw": "",
+    "max_tow": "",
+    "max_lw": "",
+    "hold_cap_vol": "",
+    "hold_cap_wgt": "",
+    "physical_j": 0,
+    "physical_w": 0,
+    "physical_y": 180,
+    "tail_wind": "",
+    "cross_wind": "",
+    "cabin_jump_seat": "",
+    "cockpit_jump_seat": "",
+    "remarks": "AIRCRAFT: PS-LHM",
+    "status": "pending",
+    "createdAt": "2026-05-19T17:19:17.622Z",
     "checks": {
       "ifn": {
         "checked": false

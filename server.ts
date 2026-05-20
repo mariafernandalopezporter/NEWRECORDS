@@ -22,7 +22,8 @@ if (!fs.existsSync(DATA_FILE)) {
 }
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '20mb' }));
+app.use(bodyParser.urlencoded({ limit: '20mb', extended: true }));
 
 // Helper to read data
 const readData = () => {

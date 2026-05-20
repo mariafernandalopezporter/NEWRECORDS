@@ -113,7 +113,7 @@ export const AircraftForm = ({ onSubmit, onCancel, existingAircrafts, externalAi
   const filteredForClone = allAvailableForClone.filter(ac => 
     ac.ac_registration.toLowerCase().includes(cloneSearch.toLowerCase()) ||
     ac.ac_owner.toLowerCase().includes(cloneSearch.toLowerCase())
-  ).slice(0, 10);
+  ).slice(0, 500);
 
   const handleClone = (ac: Aircraft) => {
     // Clone all data except the unique identity
